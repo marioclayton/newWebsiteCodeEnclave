@@ -24,7 +24,7 @@ const Navbar = () => {
         <div onClick={handleNav} className='block md:hidden'>
         {!nav ? <AiOutlineClose size={40}/> : <AiOutlineMenu size={40}/>}
         </div>
-        <div className={!nav ? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500' : 'fixed left-[-100%]'}>
+        <div className={!nav ? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000000] ease-in-out duration-500' : 'fixed left-[-100%]'}>
           <img className='w-[150px]  my-4' src={Logo} alt='/' />  
             <ul className='uppercase p-4'>
               <li className='text-xl p-4 border-b border-gray-600'>Home</li>
