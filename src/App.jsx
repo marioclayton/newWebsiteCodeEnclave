@@ -8,7 +8,7 @@ import Newsletter from './components/Newsletter';
 
 function App() {
   return (
-    <div>
+    <div> 
       <Navbar />
       <Hero />
       <Analytics />
