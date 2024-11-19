@@ -1,44 +1,59 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "myfont";
+  src: url("assets/Consolas.woff") format("woff");
+}
+
+@font-face {
+  font-family: "myfont";
+  src: url("assets/Consolas-Bold.woff") format("woff");
+  font-weight: bold;
+}
+
 body {
-    background-color: #000000;
-    font-family: Consolas; 
-    font-size: 15px; 
-    font-style: normal; 
-    font-variant: normal; 
-    font-weight: 100; 
-    line-height: 18.5714px;    
+  background-color: #000000;
+  font-family: myfont;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 100;
+  line-height: 18.5714px;
 }
 
 .overlay-container {
-   
-    position: relative;
-    display: inline-block; /* or block if it's a section */
-    width: 100%; /* Adjust as needed */
-    height: 100%; /* Adjust as needed */
-    background-image: linear-gradient(black, black),url('/src/assets/bgimage.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-blend-mode: saturation;
-  }
+  position: relative;
+  display: inline-block; /* or block if it's a section */
+  width: 100%; /* Adjust as needed */
+  height: 100%; /* Adjust as needed */
+  background-image: linear-gradient(black, black),
+    url("/src/assets/bgimage.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-blend-mode: saturation;
+}
 
-  .overlay-container::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.85); /* Black with 50% opacity */
-    z-index: 1; /* Ensures overlay is above the image */
-
+@media (max-width: 768px) {
+  .overlay-container {
+    background-attachment: scroll;
   }
+}
 
-  .overlay-content {
-    position: relative;
-    z-index: 2; /* Ensures content is above the overlay */
-    
-  }
-  
+.overlay-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85); /* Black with 50% opacity */
+  z-index: 1; /* Ensures overlay is above the image */
+}
+
+.overlay-content {
+  position: relative;
+  z-index: 2; /* Ensures content is above the overlay */
+}
