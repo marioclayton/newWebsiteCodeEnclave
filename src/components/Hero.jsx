@@ -8,7 +8,7 @@ const Hero = () => {
 
 
     <div className='text-white overlay-container '>
-      <motion.div initial={{x:-0, opacity:0}} whileInView={{ x: 0, opacity:1 }} transition={{duration:1, delay:0.2}}  className='max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center overlay-content'>
+      <motion.div initial={{x:-0, opacity:0}} whileInView={{ x: 0, opacity:1 }} transition={{duration:2.5, delay:0.5}}  className='max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center overlay-content'>
         <p className='bg-gradient-to-r from-green-300 via-slate-500 to-yellow-500 bg-clip-text text-xl tracking-tight text-transparent  p-2'>
           GROWING YOUR BUSINESS IN THE ONLINE WORLD
         </p>
