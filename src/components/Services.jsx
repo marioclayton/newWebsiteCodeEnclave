@@ -1,5 +1,5 @@
 import React from 'react';
-import Laptop from '../assets/pexels-morningtrain-18105-removebg-preview.png';
+import Laptop from '../assets/laptop.jpg';
 import {motion} from 'framer-motion';
  
 const Analytics = () => {
@@ -8,33 +8,33 @@ const Analytics = () => {
       <div className='max-w-[1240px] mx-auto grid md:grid-cols-2'>
         <motion.img initial={{x:-100, opacity:0}} whileInView={{ x: 0, opacity:1 }} transition={{duration:0.8, delay:0.2}} className='w-[500px] mx-auto my-24 '  src={Laptop} alt='/' />
         <motion.div initial={{y:200, opacity:0}} whileInView={{ y: 0, opacity:1 }} transition={{duration:0.8, delay:0.2}} className='flex flex-col justify-center'>
-          <h1 className='md:text-3xl sm:text-2xl text-xl  py-2'>Learn about our services</h1>
+          <h1 className='md:text-3xl sm:text-2xl text-3xl  py-2'>Learn about our services</h1>
           <p>
             At Code Enclave LLC, we specialize in designing and deploying modern, responsive, and user-friendly websites tailored to the unique needs of small businesses. With expertise in cutting-edge technologies, we deliver solutions that combine functionality, aesthetics, and performance.
           </p>
-          <p className='text-2xl pt-5'>
+          <p className='text-2xl sm:text-xl pt-5'>
             Our Services Include: 
           </p>
-          <p className='text-xl pt-5'>
+          <p className='text-xl sm:text-l pt-5'>
             Custom Website Design & Development 
           </p>
           <p>
              We craft beautiful, responsive websites using HTML, CSS, JavaScript, and React.js, ensuring your online presence is both captivating and functional.
           </p>
           <p>
-          <p className='text-xl pt-5'>
+          <p className='text-xl sm:text-l pt-5'>
             WordPress Website Development 
           </p>
              Need a versatile and easily manageable platform? We create custom WordPress sites that are intuitive and scalable for your growing business.
           </p>
-          <p className='text-xl pt-5'>
+          <p className='text-xl sm:text-l pt-5'>
             Fast Turnaround Time 
           </p>
-          <p className='text-l'>
+          <p className='text-l  sm:text-l '>
              We understand that time is money. Our team is dedicated to delivering high-quality websites quickly without compromising on excellence.
           </p>
           <p>
-          <p className='text-xl pt-5'>
+          <p className='text-xl sm:text-l pt-5'>
           Ongoing Maintenance & Support 
           </p>
             Keep your website running smoothly with our maintenance services, including updates, security checks, and performance optimizations.
