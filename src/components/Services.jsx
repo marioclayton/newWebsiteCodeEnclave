@@ -45,7 +45,7 @@ const Analytics = () => {
           <p className='font-bold'>
             Ready to get started? Contact us today!
           </p>
-          <button className='bg-black text-white w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3'>Get Started</button>
+          <button className='bg-black text-white w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3'>Contact Us</button>
         </motion.div>
       </div>
     </div>

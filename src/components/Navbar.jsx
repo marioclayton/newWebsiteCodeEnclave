@@ -16,10 +16,9 @@ const Navbar = () => {
         <img className='w-[120px]  my-4' src={Logo} alt='/' />
         <ul className='hidden md:flex'>
           <li className='text-l p-4'>Home</li>
-          <li className='text-l p-4'>Company</li>
-          <li className='text-l p-4'>Projects</li>
-          <li className='text-l p-4'>Testimonials</li>
-          <li className='text-l p-4'>Contact</li>
+          <li className='text-l p-4'>Services</li>
+          <li className='text-l p-4'>Portfolio</li>
+          <li className='text-l p-4'>Contact Us</li>
         </ul>
         <div onClick={handleNav} className='block md:hidden'>
         {!nav ? <AiOutlineClose size={35}/> : <AiOutlineMenu size={35}/>}
@@ -28,10 +27,9 @@ const Navbar = () => {
           <img className='w-[150px]  my-4' src={Logo} alt='/' />  
             <ul className='uppercase p-4'>
               <li className='text-l p-4 border-b border-gray-600'>Home</li>
-              <li className='text-l p-4 border-b border-gray-600'>Company</li>
-              <li className='text-l p-4 border-b border-gray-600'>Projects</li>
-              <li className='text-l p-4 border-b border-gray-600'>Testimonials</li>
-              <li className='text-l p-4'>Contact</li>
+              <li className='text-l p-4 border-b border-gray-600'>Services</li>
+              <li className='text-l p-4 border-b border-gray-600'>Portfolio</li>
+              <li className='text-l p-4'>Contact Us</li>
             </ul>
         </div>
       </div>
