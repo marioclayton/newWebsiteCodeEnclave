@@ -27,10 +27,10 @@ const Navbar = () => {
         <div className={!nav ? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000000] ease-in-out duration-500' : 'fixed left-[-100%]'}>
           <img className='w-[150px]  my-4' src={Logo} alt='/' />  
             <ul className='uppercase p-4'>
-              <Link to='/' className='text-l p-4 border-b border-gray-600'>Home</Link>
-              <Link to='/Services' className='text-l p-4 border-b border-gray-600'>Services</Link>
-              <Link to='/Portfolio' className='text-l p-4 border-b border-gray-600'>Portfolio</Link>
-              <Link to='/ContactUs' className='text-l p-4'>Contact Us</Link>
+              <Link to='/' className='grid text-l p-4 border-b border-gray-600'>Home</Link>
+              <Link to='/Services' className='grid text-l p-4 border-b border-gray-600'>Services</Link>
+              <Link to='/Portfolio' className='grid text-l p-4 border-b border-gray-600'>Portfolio</Link>
+              <Link to='/ContactUs' className='grid text-l p-4'>Contact Us</Link>
             </ul>
         </div>
       </div>
