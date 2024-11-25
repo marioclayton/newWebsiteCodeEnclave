@@ -6,16 +6,19 @@ import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import Newsletter from './components/Newsletter';
 import ContactUs from './components/ContactUs';
+import Portfolio from './components/portfolio';
+import Testimonials from './components/Testimonials';
 
 function App() {
   return (
     <div> 
       <Navbar />
-      <Hero />
-      
+      <Hero /> 
       <Analytics />
       <Newsletter />
       <Cards />
+      <Portfolio />
+      <Testimonials />
       <ContactUs />
       <Footer />
     </div>
