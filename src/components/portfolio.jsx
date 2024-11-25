@@ -4,7 +4,7 @@ import Background from '../assets/bgimage.jpg';
 const portfolio = () => {
   return (
     <div>
-        <section className="bg-white dark:bg-[#131313] antialiased">
+        <section className="bg-white dark:bg-[#111111] antialiased">
             <div className="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
                 <div className="max-w-2xl mx-auto text-center">
                 <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-4xl dark:text-white">
@@ -16,7 +16,7 @@ const portfolio = () => {
                 </div>
 
                 <div className="grid grid-cols-1 mt-12 text-center sm:mt-16 gap-x-20 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-                <div className="space-y-4 bg-[#0c0c0c] py-16 rounded-xl">
+                <div className=" space-y-4 bg-[#0c0c0c] py-16 px-2 rounded-xl shadow-xl hover:scale-105 duration-300">
                     <img className='w-[80%] mx-auto rounded-lg'  src={Background} alt='/' />
                     <span
                     className="bg-gray-100 text-gray-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
@@ -41,7 +41,7 @@ const portfolio = () => {
                     </a>
                 </div>
 
-                <div className="space-y-4 bg-[#0c0c0c] py-16 rounded-xl">
+                <div className="space-y-4 bg-[#0c0c0c] py-16 px-2 rounded-xl shadow-xl hover:scale-105 duration-300">
                     <img className='w-[80%] mx-auto rounded-lg'  src={Background} alt='/' />
                     <span
                     className="bg-gray-100 text-gray-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
@@ -66,7 +66,7 @@ const portfolio = () => {
                     </a>
                 </div>
 
-                <div className="space-y-4 bg-[#0c0c0c] py-16 rounded-xl">
+                <div className="space-y-4 bg-[#0c0c0c] py-16 px-2 rounded-xl shadow-xl hover:scale-105 duration-300">
                     <img className='w-[80%] mx-auto rounded-lg'  src={Background} alt='/' />   
                     <span
                     className="bg-gray-100 text-gray-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
