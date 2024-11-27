@@ -8,10 +8,13 @@ import Newsletter from './components/Newsletter';
 import ContactUs from './components/ContactUs';
 import Portfolio from './components/portfolio';
 import Testimonials from './components/Testimonials';
+import ScrollToTop from "./scrollToTop.jsx";
+
 
 function App() {
   return (
     <div> 
+      <ScrollToTop />
       <Navbar />
       <Hero /> 
       <Analytics />
@@ -24,5 +27,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
