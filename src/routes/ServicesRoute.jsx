@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Newsletter from '../components/Newsletter';
 import ScrollToTop from "../scrollToTop.jsx";
+import Quote from "../components/Quote.jsx";
 
 
 const ServicesRoute = () => {
@@ -15,6 +16,7 @@ const ServicesRoute = () => {
       <Analytics />
       <Newsletter />
       <Cards />
+      <Quote />
       <Footer />
     </div>
   )

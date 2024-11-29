@@ -28,7 +28,7 @@ const ContactUs = () => {
       <h2 className="mb-4 text-2xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Call Us</h2>
       <div className='flex justify-center'> 
         <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl mr-2">You can reach us at </p>
-        <a href="tel:+123456789" className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-white sm:text-xl">305-322-0401</a>
+        <a href="tel:+13053220401" className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-white sm:text-xl">305-322-0401</a>
         <FaPhone className='mb-8 lg:mb-16 text-center dark:text-white sm:text-xl ml-4'/>
       </div>
       <h2 className="mb-4 text-2xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Email Us</h2>

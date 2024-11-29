@@ -1,5 +1,6 @@
 import React from 'react';
 import {motion} from 'framer-motion';
+import {Link} from 'react-router-dom';
 
 const Newsletter = () => {
   return (
@@ -24,7 +25,7 @@ const Newsletter = () => {
           </div>
           <p>
             We care bout the protection of your data. Read our{' '}
-            <span className='text-[#a6a6a6]'>Privacy Policy.</span>
+            <Link to='/Privacy' className='text-[#a6a6a6]'>privacy policy.</Link>
           </p>
         </div>
       </div>
