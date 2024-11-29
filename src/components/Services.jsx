@@ -7,7 +7,7 @@ const Analytics = () => {
   return (
     <div className='w-full bg-white '>
       <div className='max-w-[1240px] mx-auto grid lg:grid-cols-2'>
-        <motion.img initial={{x:-100, opacity:0}} whileInView={{ x: 0, opacity:1 }} transition={{duration:0.8, delay:0.2}} className='w-full lg:w-[500px] mx-auto my-auto rounded-lg'  src={Laptop} alt='/' />
+        <motion.img initial={{x:-100, opacity:0}} whileInView={{ x: 0, opacity:1 }} transition={{duration:0.8, delay:0.2}} className='w-full lg:w-[500px] mx-auto my-auto lg:rounded-lg'  src={Laptop} alt='/' />
         <motion.div initial={{y:200, opacity:0}} whileInView={{ y: 0, opacity:1 }} transition={{duration:0.8, delay:0.2}} className='py-16 px-4 flex flex-col justify-center'>
           <h1 className='md:text-3xl sm:text-2xl text-3xl  py-2'>Learn about our services</h1>
           <p className='py-2'>
@@ -41,10 +41,10 @@ const Analytics = () => {
             Ready to get started? Contact us today!
           </p>
           <div className='m-auto'>
-            <button className='bg-black text-white w-[200px] rounded-md font-medium mr-3 mx-auto py-3'>
+            <button className='bg-black text-white w-[150px] rounded-md font-medium mr-3 mx-auto py-3'>
               <Link to='/ContactUs' className='text-l p-4'>Contact Us</Link>
             </button>
-            <button className='bg-black text-white w-[200px] rounded-md font-medium ml-3 mx-auto py-3'>
+            <button className='bg-black text-white w-[150px] rounded-md font-medium ml-3 mx-auto py-3'>
               <Link to='/Services' className='text-l p-4'>Get Started</Link>
             </button>
           </div>
