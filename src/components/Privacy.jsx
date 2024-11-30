@@ -96,10 +96,10 @@ const Privacy = () => {
             If you have any questions or concerns about this Privacy Policy or how we handle your personal information, please contact us today!
           </p>
           <div className='m-auto'>
-            <button className='bg-white text-black w-[200px] rounded-md font-medium mr-3 mx-auto py-3'>
+            <button className='bg-white text-black w-[150px] rounded-md font-medium mr-3 mx-auto py-3'>
               <Link to='/ContactUs' className='text-l p-4'>Contact Us</Link>
             </button>
-            <button className='bg-white text-black w-[200px] rounded-md font-medium ml-3 mx-auto py-3'>
+            <button className='bg-white text-black w-[150px] rounded-md font-medium ml-3 mx-auto py-3'>
               <Link to='/Services' className='text-l p-4'>Get Started</Link>
             </button>
           </div>
