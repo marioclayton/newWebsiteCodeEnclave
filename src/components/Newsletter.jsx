@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useState  } from 'react'
 import {motion} from 'framer-motion';
 import {Link} from 'react-router-dom';
 import emailjs from '@emailjs/browser';
@@ -7,28 +7,38 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Newsletter = () => {
 
-  const notify = () => toast("Submitted!");
-  const form = useRef();
 
-  const sendEmail = (e) => {
+  const [formData, setFormData] = useState({ user_email: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+
+    const serviceID = 'service_d9jc837';
+    const templateID = 'template_s0pqi3j';
+    const userID = 'D3C-PazNicF9wiYHl';
 
     emailjs
-      .sendForm('service_d9jc837', 'template_s0pqi3j', form.current, {
-        publicKey: 'D3C-PazNicF9wiYHl',
+      .send(serviceID, templateID, formData, userID)
+      .then((response) => {
+        setIsSubmitting(false);
+        toast('You are now subscribed!');
+        setFormData({ user_email: '' }); // Reset form
       })
-      .then(
-        () => {
-          console.log('SUCCESS!');
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
-        },
-      );
-      if (form.current) {
-        form.current.reset();
-      }
+      .catch((error) => {
+        setIsSubmitting(false);
+        console.error('EmailJS error:', error); // Log the error for debugging
+      });
   };
+
 
   return (
     <motion.div initial={{y:50, opacity:0}} whileInView={{ y: 0, opacity:1 }} transition={{duration:0.8, delay:0.01}} className='w-full py-16 text-white px-4'>
@@ -40,17 +50,20 @@ const Newsletter = () => {
           <p>Sign up to our newsletter and stay up to date.</p>
         </div>
         <div className='my-4'>
-          <form ref={form} onSubmit={sendEmail} className='flex flex-col sm:flex-row items-center justify-between w-full'>
+          <form onSubmit={handleSubmit} className='flex flex-col sm:flex-row items-center justify-between w-full'>
             <input
-              name='user_email' className='p-3 flex w-full rounded-md text-black'
+              name='user_email' value={formData.user_email} className='p-3 flex w-full rounded-md text-black'
               type='email'
               placeholder='Enter Email'
+              onChange={handleInputChange}
+
+              required
             />
-            <button onClick={notify} type="submit" value="Send" className='bg-[#a6a6a6] text-black rounded-md font-medium w-[200px] ml-4 my-6 px-6 py-3'>
+            <button type="submit" disabled={isSubmitting} value="Send" className='bg-[#a6a6a6] text-black rounded-md font-medium w-[200px] ml-4 my-6 px-6 py-3'>
               Notify Me
             </button>
           </form>
-          <ToastContainer />
+          <ToastContainer position="bottom-center" style={{ zIndex: 9999 }} />
           <p>
             We care bout the protection of your data. Read our{' '}
             <Link to='/Privacy' className='text-[#a6a6a6]'>privacy policy.</Link>

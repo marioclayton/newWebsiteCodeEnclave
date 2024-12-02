@@ -3,6 +3,7 @@ import Single from '../assets/single.png'
 import Double from '../assets/double.png'
 import Triple from '../assets/triple.png'
 import {Link} from 'react-router-dom';
+import {motion} from 'framer-motion';
 
 
 

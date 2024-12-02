@@ -6,9 +6,9 @@ import {Link} from 'react-router-dom';
 const Analytics = () => {
   return (
     <div className='w-full bg-white '>
-      <div className='max-w-[1240px] mx-auto grid lg:grid-cols-2'>
-        <motion.img initial={{x:-100, opacity:0}} whileInView={{ x: 0, opacity:1 }} transition={{duration:0.8, delay:0.2}} className='w-full lg:w-[500px] mx-auto my-auto lg:rounded-lg'  src={Laptop} alt='/' />
-        <motion.div initial={{y:200, opacity:0}} whileInView={{ y: 0, opacity:1 }} transition={{duration:0.8, delay:0.2}} className='py-16 px-4 flex flex-col justify-center'>
+      <motion.div initial={{x:-0, opacity:0}} whileInView={{ x: 0, opacity:1 }} transition={{duration:0.5, delay:0.3}} className='max-w-[1240px] mx-auto grid lg:grid-cols-2'>
+        <img initial={{x:-100, opacity:0}} whileInView={{ x: 0, opacity:1 }} transition={{duration:0.8, delay:0.2}} className='w-full lg:w-[500px] mx-auto my-auto lg:rounded-lg'  src={Laptop} alt='/' />
+        <div initial={{y:200, opacity:0}} whileInView={{ y: 0, opacity:1 }} transition={{duration:0.8, delay:0.2}} className='py-16 px-4 flex flex-col justify-center'>
           <h1 className='md:text-3xl sm:text-2xl text-3xl  py-2'>Learn about our services</h1>
           <p className='py-2'>
             At Code Enclave LLC, we specialize in creating modern, user-friendly websites tailored to the unique needs of small to medium-sized businesses. Whether you're looking to update an existing site or need a brand-new online presence, our team is here to help you stand out in a digital world. We also offer advanced solutions for larger companies that require more complex web applications or custom features.
@@ -49,8 +49,8 @@ const Analytics = () => {
             </button>
           </div>
           
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </div>
   );
 };

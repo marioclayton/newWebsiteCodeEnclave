@@ -21,7 +21,25 @@ body {
   font-variant: normal;
   font-weight: 100;
   line-height: 18.5714px;
+  --toastify-color-light: #000000;
+  --toastify-text-color-light: #ffffff;
+  --toastify-font-family: myfont;
+  --toastify-font-size: 15px;
+  --toastify-font-style: normal;
+  --toastify-font-variant: normal;
+  --toastify-font-weight: 100;
+  --toastify-color-progress-light: linear-gradient(
+    to right,
+    #4cd964,
+    #5ba051,
+    #91d48b,
+    #b7e2b9,
+    #dcf7e3,
+    #ffffff
+  );
 }
+
+
 
 .overlay-container {
   position: relative;
@@ -40,6 +58,7 @@ body {
   .overlay-container {
     background-attachment: scroll;
   }
+  
 }
 
 .overlay-container::before {
