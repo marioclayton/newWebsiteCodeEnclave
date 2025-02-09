@@ -2,43 +2,44 @@ import React, { useState } from 'react'
 import { FaPhone } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import {motion} from 'framer-motion';
-import emailjs from '@emailjs/browser';
-
 import { useNavigate } from 'react-router-dom';
+
 const Quote = () => {
 
-  const [formData, setFormData] = useState({ from_name: '', company: '', email: '', phone: '', subject: '', message: '' });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const navigate = useNavigate();
-  
-    const handleInputChange = (e) => {
-      setFormData({
-        ...formData,
-        [e.target.name]: e.target.value,
-      });
-    };
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      setIsSubmitting(true);
-  
-      const serviceID = 'service_d9jc837';
-      const templateID = 'template_nzurjxn';
-      const userID = 'D3C-PazNicF9wiYHl';
-  
-      emailjs
-        .send(serviceID, templateID, formData, userID)
-        .then(() => {
-          setIsSubmitting(false);
-          setTimeout(() => {
-            navigate('/RequestReceived'); // Redirect to the success page
-          }); // Optional delay to show the toast
-        })
-        .catch((error) => {
-          setIsSubmitting(false);
-          console.error('EmailJS error:', error);
+  const [formData, setFormData] = useState({ from_name: '', company: '', email: '', phone: '', subject: 'Quote', message: '' });
+  const [isSubmitting, setStatus] = useState(false);
+  const navigate = useNavigate();
+      
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+      
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+    
+      try {
+        const response = await fetch("http://codeenclave.com/backend/send-quote.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
         });
-    };
+  
+        const result = await response.text();
+        setStatus(result);
+        if (response.ok) {
+          setTimeout(() => {
+            navigate("/RequestReceived"); // Redirect to another page
+          }, 2000);
+        }
+      } catch (error) {
+        setStatus("Error sending message.");
+      }
+
+  };
 
   return (
     <motion.div initial={{x:-0, opacity:0}} whileInView={{ x: 0, opacity:1 }} transition={{duration:1.5, delay:0.2}}  className='w-full bg-black py-16 px-4'>
@@ -77,7 +78,7 @@ const Quote = () => {
                 <option value="CustomQuote">Get a Custom Quote</option>
             </select>
         </div>
-        <div class="sm:col-span-2">
+        <div className="sm:col-span-2">
             <label for="message" className="block mb-2 text-sm font-medium text-gray-400">Your message</label>
             <textarea value={formData.message}
               onChange={handleInputChange} name='message' id="message" rows="6" className="block p-2.5 w-full text-sm bg-gray-50 rounded-lg shadow-sm border  border-gray-600 placeholder-gray-400 text-black focus:ring-primary-500 focus:border-primary-500" placeholder="Leave a comment..."></textarea>
@@ -104,7 +105,7 @@ const Quote = () => {
   </div>
 
     </motion.div>
-  )
-}
+  );
+};
 
-export default Quote
+export default Quote;

@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { FaPhone } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import {motion} from 'framer-motion';
-import emailjs from '@emailjs/browser';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -10,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 const ContactUs = () => {
 
     const [formData, setFormData] = useState({ from_name: '', user_email: '', subject: '', message: '' });
-    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitting, setStatus] = useState(false);
     const navigate = useNavigate();
   
     const handleInputChange = (e) => {
@@ -20,26 +19,31 @@ const ContactUs = () => {
       });
     };
   
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
       e.preventDefault();
-      setIsSubmitting(true);
-  
-      const serviceID = 'service_d9jc837';
-      const templateID = 'template_s0pqi3j';
-      const userID = 'D3C-PazNicF9wiYHl';
-  
-      emailjs
-        .send(serviceID, templateID, formData, userID)
-        .then(() => {
-          setIsSubmitting(false);
-          setTimeout(() => {
-            navigate('/RequestReceived'); // Redirect to the success page
-          }); // Optional delay to show the toast
-        })
-        .catch((error) => {
-          setIsSubmitting(false);
-          console.error('EmailJS error:', error);
-        });
+      setStatus("Sending...");
+      
+        try {
+          const response = await fetch("http://codeenclave.com/backend/send-email.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+          });
+    
+          const result = await response.text();
+          setStatus(result);
+          if (response.ok) {
+            setTimeout(() => {
+              navigate("/RequestReceived"); // Redirect to another page
+            }, 2000);
+          }
+        } catch (error) {
+          setStatus("Error sending message.");
+        }
+    
+    
+
+
     };
   
 

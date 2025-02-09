@@ -7,7 +7,7 @@ const Analytics = () => {
     <div className='w-full bg-white '>
       <motion.div initial={{x:-0, opacity:0}} whileInView={{ x: 0, opacity:1 }} transition={{duration:0.5, delay:0.3}} className='mx-auto grid lg:grid-cols-2'>
         {/*<img initial={{x:-100, opacity:0}} whileInView={{ x: 0, opacity:1 }} transition={{duration:0.8, delay:0.2}} className='w-full lg:w-[500px] mx-auto my-auto lg:rounded-lg'  src={Laptop} alt='/' />*/}
-        <div className='bg-[url(./assets/ServicesBackground1.png)] text-white bg-cover bg-fixed h-screen lg:h-auto justify-items-end'>
+        <div className='bg-[url(./assets/ServicesBackground1.png)] text-white bg-cover bg-scroll md:bg-fixed h-screen lg:h-auto justify-items-end'>
           <div className='mx-16 content-center h-full lg:max-w-2xl '>
           <h1 className='md:text-4xl sm:text-3xl text-4xl  py-10'>Learn about our services</h1>
           <p className='md:text-xl sm:text-xl text-xl py-2'>
