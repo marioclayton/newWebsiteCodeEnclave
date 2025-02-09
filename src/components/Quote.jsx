@@ -42,7 +42,7 @@ const Quote = () => {
 
   return (
     <motion.div initial={{x:-0, opacity:0}} whileInView={{ x: 0, opacity:1 }} transition={{duration:1.5, delay:0.2}}  className='w-full bg-black py-16 px-4'>
-      <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+      <div className="py-8 lg:py-16 lg:px-4 px-20 mx-auto max-w-screen-md">
       <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-white">Get a Quote</h2>
       <p className="mb-8 lg:mb-16 font-light text-center text-gray-400 sm:text-xl">Looking for a custom website designed just for your business? Let us help you turn your ideas into a digital reality! Feel free to select our basic or medium package if your business needs a more basic wev application. Fill out the form below to request a personalized quote based on your project needs. Our team will review your information and get back to you with a detailed estimate as soon as possible.</p>
       <form onSubmit={handleSubmit} className="space-y-8 mb-14">

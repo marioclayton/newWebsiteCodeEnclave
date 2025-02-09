@@ -6,7 +6,7 @@ import Portfolio3 from '../assets/pexels-pixabay-221159.jpg';
 const portfolio = () => {
   return (
     <div>
-        <section className="bg-[#111111] antialiased">
+        <section className="bg-[#000000] antialiased">
             <div className="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
                 <div className="max-w-2xl mx-auto text-center">
                     <h2 className="text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl text-white">
@@ -18,8 +18,8 @@ const portfolio = () => {
                 </div>
 
                 <div className="grid grid-cols-1 mt-12 text-center sm:mt-16 gap-x-20 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-                    <div className=" space-y-4 bg-[#0c0c0c] py-16 px-2 rounded-xl shadow-xl hover:scale-105 duration-300">
-                        <img className='w-[80%] mx-auto rounded-lg'  src={Portfolio1} alt='/' />
+                    <div className=" space-y-4 bg-[#0c0c0c] py-16 px-2  shadow-xl hover:scale-105 duration-300">
+                        <img className='w-[90%] mx-auto rounded-lg'  src={Portfolio1} alt='/' />
                         <span
                         className="text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">
                         Alphabet Inc.
@@ -43,8 +43,8 @@ const portfolio = () => {
                         </a>
                     </div>
 
-                    <div className="space-y-4 bg-[#0c0c0c] py-16 px-2 rounded-xl shadow-xl hover:scale-105 duration-300">
-                        <img className='w-[80%] mx-auto rounded-lg'  src={Portfolio2} alt='/' />
+                    <div className="space-y-4 bg-[#0c0c0c] py-16 px-2  shadow-xl hover:scale-105 duration-300">
+                        <img className='w-[90%] mx-auto rounded-lg'  src={Portfolio2} alt='/' />
                         <span
                         className="text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">
                         Microsoft Corp.
@@ -68,8 +68,8 @@ const portfolio = () => {
                         </a>
                     </div>
 
-                    <div className="space-y-4 bg-[#0c0c0c] py-16 px-2 rounded-xl shadow-xl hover:scale-105 duration-300">
-                        <img className='w-[80%] mx-auto rounded-lg'  src={Portfolio3} alt='/' />   
+                    <div className="space-y-4 bg-[#0c0c0c] py-16 px-2  shadow-xl hover:scale-105 duration-300">
+                        <img className='w-[90%] mx-auto rounded-lg'  src={Portfolio3} alt='/' />   
                         <span
                         className="text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">
                         Adobe Inc.

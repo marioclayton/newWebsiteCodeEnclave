@@ -18,7 +18,6 @@ function App() {
       <Navbar />
       <Hero /> 
       <Analytics />
-      <Newsletter />
       <Cards />
       <Portfolio />
       <Testimonials />

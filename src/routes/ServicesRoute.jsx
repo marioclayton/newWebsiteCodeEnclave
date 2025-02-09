@@ -14,7 +14,6 @@ const ServicesRoute = () => {
       <ScrollToTop />
       <Navbar />
       <Analytics />
-      <Newsletter />
       <Cards />
       <Quote />
       <Footer />

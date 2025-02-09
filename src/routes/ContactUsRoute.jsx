@@ -11,7 +11,6 @@ const ContactUsRoute = () => {
       <ScrollToTop />
       <Navbar />
       <ContactUs />
-      <Newsletter />
       <Footer />
     </div>
   )
