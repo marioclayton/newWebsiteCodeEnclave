@@ -11,6 +11,7 @@ import BrandingRoute from './routes/BrandingRoute.jsx';
 import SEORoute from './routes/SEORoute.jsx';
 import WebDevRoute from './routes/WebDevRoute.jsx';
 import RequestReceivedRoute from './routes/RequestReceivedRoute.jsx';
+import NotFoundRoute from './routes/NotFoundRoute.jsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
   {path: '/SEO', element: <SEORoute />},
   {path: '/WebDev', element: <WebDevRoute />},
   {path: '/RequestReceived', element: <RequestReceivedRoute />},
+  {path: '*', element: <NotFoundRoute />,}
 ])
 
 createRoot(document.getElementById('root')).render(

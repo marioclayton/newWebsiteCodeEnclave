@@ -9,6 +9,12 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // Handle 404 errors for invalid routes, set title to "Page Not Found"
+      if (window.location.pathname === '/404') {
+        document.title = 'Page Not Found';
+      }
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

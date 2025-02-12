@@ -8,6 +8,8 @@ const Quote = () => {
 
   const [formData, setFormData] = useState({ from_name: '', company: '', email: '', phone: '', subject: 'Quote', message: '' });
   const [isSubmitting, setStatus] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   const navigate = useNavigate();
       
   const handleInputChange = (e) => {
@@ -20,6 +22,7 @@ const Quote = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Sending...");
+    setLoading(true);
     
       try {
         const response = await fetch("http://codeenclave.com/backend/send-quote.php", {
@@ -32,8 +35,9 @@ const Quote = () => {
         setStatus(result);
         if (response.ok) {
           setTimeout(() => {
+            setLoading(false);
             navigate("/RequestReceived"); // Redirect to another page
-          }, 2000);
+          }, 0);
         }
       } catch (error) {
         setStatus("Error sending message.");
@@ -88,6 +92,32 @@ const Quote = () => {
         </div>
         
       </form>
+
+      {loading && (
+        <div className="flex justify-center items-center my-4">
+          <svg
+            className="animate-spin h-16 w-16 text-green-600"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              className="opacity-25"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              strokeWidth="4"
+            />
+            <path
+              className="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8v8H4z"
+            />
+          </svg>
+        </div>
+      )}
+
       <h2 className="mb-4 text-2xl tracking-tight font-extrabold text-center text-white">Call Us</h2>
       <div className='flex justify-center'> 
         <p className="mb-8 lg:mb-16 font-light text-center text-gray-400 sm:text-xl mr-2">You can reach us at </p>

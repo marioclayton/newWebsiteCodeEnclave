@@ -5,19 +5,19 @@ import {Link} from 'react-router-dom';
 const Analytics = () => {
   return (
     <div className='w-full bg-white '>
-      <motion.div initial={{x:-0, opacity:0}} whileInView={{ x: 0, opacity:1 }} transition={{duration:0.5, delay:0.3}} className='mx-auto grid lg:grid-cols-2'>
-        {/*<img initial={{x:-100, opacity:0}} whileInView={{ x: 0, opacity:1 }} transition={{duration:0.8, delay:0.2}} className='w-full lg:w-[500px] mx-auto my-auto lg:rounded-lg'  src={Laptop} alt='/' />*/}
-        <div className='bg-[url(./assets/ServicesBackground1.png)] text-white bg-cover bg-scroll md:bg-fixed h-screen lg:h-auto justify-items-end'>
-          <div className='mx-16 content-center h-full lg:max-w-2xl '>
+      <div className='mx-auto grid lg:grid-cols-2'>
+      <div className='bg-[url(./assets/ServicesBackground1.png)] text-white bg-cover bg-scroll md:bg-fixed h-screen lg:h-auto justify-items-end'>
+      <motion.div initial={{x:0, opacity:0}} whileInView={{ x: 0, opacity:1 }}  transition={{duration:1.0, delay:0.2}} viewport={{ once: false, amount: 0.1 }} className='mx-16 content-center h-full lg:max-w-2xl '>
           <h1 className='md:text-4xl sm:text-3xl text-4xl  py-10'>Learn about our services</h1>
           <p className='md:text-xl sm:text-xl text-xl py-2'>
             At Code Enclave LLC, we specialize in creating modern, user-friendly websites tailored to the unique needs of small to medium-sized businesses. Whether you're looking to update an existing site or need a brand-new online presence, our team is here to help you stand out in a digital world.          
           </p>
-          </div>
+          
         
+        </motion.div>
         </div>
         <div className='md:m-16 m-8'>
-          <div initial={{y:200, opacity:0}} whileInView={{ y: 0, opacity:1 }} transition={{duration:0.8, delay:0.2}} className='text-justify lg:max-w-2xl py-16 px-4 flex flex-col justify-left'>
+        <motion.div initial={{x:0, opacity:0}} whileInView={{ x: 0, opacity:1 }}  transition={{duration:1.0, delay:0.2}} viewport={{ once: false, amount: 0.1 }} className='text-justify lg:max-w-2xl py-16 px-4 flex flex-col justify-left'>
             
             <p className=' text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl max-w-2xl mx-auto text-center pb-16'>
               Our Services Include
@@ -54,9 +54,9 @@ const Analytics = () => {
                 <Link to='/Services' className='text-l p-4'>Get Started</Link>
               </button>
             </div>
-          </div>
-        </div>
-      </motion.div>
+          </motion.div>
+      </div>
+      </div>
     </div>
   );
 };
