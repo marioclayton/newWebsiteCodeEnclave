@@ -35,14 +35,14 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'mcbizz96@gmail.com';  // Replace with your Gmail address
-    $mail->Password = 'qvkm acgp ybvo iwvq';     // Replace with your Gmail App Password
+    $mail->Username = 'youremail@gmail.com';  // Replace with your Gmail address
+    $mail->Password = 'pass';     // Replace with your Gmail App Password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
     // Email settings
-    $mail->setFrom('mcbizz96@gmail.com', 'Your Name');
-    $mail->addAddress('mcbizz96@gmail.com'); // Where the email will be sent
+    $mail->setFrom('youremail@gmail.com', 'Your Name');
+    $mail->addAddress('youremail@gmail.com'); // Where the email will be sent
 
     $mail->Subject = $subject;
     $mail->Body = "Name: $name\nCompany: $company\nEmail: $email\nPhone: $phone\n\nMessage:\n$message";
