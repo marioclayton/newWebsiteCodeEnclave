@@ -1,13 +1,17 @@
 import React, { useEffect } from 'react'
+import { useLocation } from "react-router-dom";
+
 import NotFound from '../components/NotFound';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToTop from "../scrollToTop.jsx";
 
 
+
 import { Helmet } from 'react-helmet';
 
 const NotFoundRoute = () => {
+  const location = useLocation();
 
 
     useEffect(() => {
@@ -15,7 +19,14 @@ const NotFoundRoute = () => {
         document.title = "Page Not Found";
         window.history.replaceState(null, '', '/404');  // Optional: Change the URL to /404
         // You can add logic to handle the 404 status for SEO purposes here if needed
-      }, []);
+        console.log("NotFound component mounted on:", location.pathname);
+        Error(404);
+
+    fetch("/nonexistent", { method: "GET" }).then((res) => {
+      console.log("Server responded with status:", res.status);
+    });
+  }, [location]);
+
 
       
   return (
@@ -28,9 +39,7 @@ const NotFoundRoute = () => {
               <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Helmet>
       <ScrollToTop />
-      <Navbar />
       <NotFound />
-      <Footer />
     </div>
   )
 }
