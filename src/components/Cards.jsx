@@ -21,7 +21,7 @@ const Cards = () => {
                 <p className='py-2 border-b mx-8'>SEO Optimazation</p>
                 <p className='py-2 border-b mx-8'>-</p>
               </div>
-              <button className='bg-green-600 text-[#ffffff] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3'>
+              <button className='bg-gray-600 text-[#ffffff] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3'>
                 <Link to='/Quote' className='text-l p-4'>
                   Choose
                 </Link>
@@ -54,7 +54,7 @@ const Cards = () => {
                 <p className='py-2 border-b mx-8'>Custom Branding</p>
                 
               </div>
-              <button className='bg-green-600 text-[#ffffff] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3'>
+              <button className='bg-gray-600 text-[#ffffff] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3'>
                 <Link to='/Quote' className='text-l p-4'>
                   Get Quote
                 </Link>

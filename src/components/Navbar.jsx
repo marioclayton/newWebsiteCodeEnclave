@@ -49,6 +49,14 @@ const Navbar = () => {
                   }
                 : {}
             } className='text-l p-4'>Contact Us</NavLink>
+            <NavLink to="/Quote" end style={({ isActive }) =>
+              isActive
+                ? {
+                    
+                    color: '#86efac ',
+                  }
+                : {}
+            } className='text-l p-4'>Quote</NavLink>
         </ul>
         <div onClick={handleNav} className='block md:hidden'>
         {!nav ? <AiOutlineClose size={35}/> : <AiOutlineMenu size={35}/>}
@@ -89,6 +97,14 @@ const Navbar = () => {
                   }
                 : {}
             } className='grid text-l p-4 border-b border-gray-600'>Contact Us</NavLink>
+            <NavLink to="/Quote" end style={({ isActive }) =>
+              isActive
+                ? {
+                    
+                    color: '#86efac ',
+                  }
+                : {}
+            } className='grid text-l p-4 border-b border-gray-600'>Quote</NavLink>
         </ul>
         </div>
       </div>

@@ -83,7 +83,7 @@ const ContactUs = () => {
           ></textarea>
           </div>
           <div className='w-full flex'>
-          <button disabled={isSubmitting} type="submit" value="Send" className="mx-auto py-3 px-5 text-sm font-medium text-center text-white rounded-lg  sm:w-fit  focus:ring-4 focus:outline-none focus:ring-white-300 bg-green-600 hover:bg-green-700 focus:ring-primary-800">
+          <button disabled={isSubmitting} type="submit" value="Send" className="mx-auto py-3 px-5 text-sm font-medium text-center text-white rounded-lg  sm:w-fit  focus:ring-4 focus:outline-none focus:ring-white-300 bg-gray-600 hover:bg-gray-700 focus:ring-primary-800">
           Send Message</button>
           
         </div>
@@ -91,7 +91,7 @@ const ContactUs = () => {
       {loading && (
         <div className="flex justify-center items-center my-4">
           <svg
-            className="animate-spin h-16 w-16 text-green-600"
+            className="animate-spin h-16 w-16 text-gray-600"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

@@ -51,7 +51,7 @@ const Analytics = () => {
                 <Link to='/ContactUs' className='text-l p-4'>Contact Us</Link>
               </button>
               <button className='bg-black text-white w-[150px] rounded-md font-medium ml-3 mx-auto py-3'>
-                <Link to='/Services' className='text-l p-4'>Get Started</Link>
+                <Link to='/Quote' className='text-l p-4'>Get Started</Link>
               </button>
             </div>
           </motion.div>
