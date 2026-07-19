@@ -1,60 +1,64 @@
 import React from 'react';
-import {motion} from 'framer-motion';
 import {Link} from 'react-router-dom';
- 
+
 const Analytics = () => {
   return (
-    <div className='w-full bg-white '>
-      <div className='mx-auto grid lg:grid-cols-2'>
-      <div className='bg-[url(./assets/ServicesBackground1.png)] text-white bg-cover bg-scroll md:bg-fixed h-screen lg:h-auto justify-items-end'>
-      <motion.div initial={{x:0, opacity:0}} whileInView={{ x: 0, opacity:1 }}  transition={{duration:1.0, delay:0.2}} viewport={{ once: false, amount: 0.1 }} className='mx-16 content-center h-full lg:max-w-2xl '>
-          <h1 className='md:text-4xl sm:text-3xl text-4xl  py-10'>Learn about our services</h1>
-          <p className='md:text-xl sm:text-xl text-xl py-2'>
-            At Code Enclave LLC, we specialize in creating modern, user-friendly websites tailored to the unique needs of small to medium-sized businesses. Whether you're looking to update an existing site or need a brand-new online presence, our team is here to help you stand out in a digital world.          
-          </p>
-          
-        
-        </motion.div>
+    <div className='w-full py-32 md:py-40 relative'>
+      <div className='relative z-10 pt-6 max-w-[1200px] w-[90%] sm:w-[82%] lg:w-[78%] mx-auto retro-display-amber'>
+
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-10'>
+
+        <h2 className='text-3xl md:text-4xl font-bold mb-8 pl-[2ch] -indent-[2ch] lg:col-span-2'>&gt; Solutions</h2>
+
+        <p className='text-xl md:text-2xl mb-12 leading-[2.1] pl-[2ch] -indent-[2ch] lg:col-span-2'>
+          &gt; At <strong>Code Enclave</strong>, we build high-performance websites and custom software that help businesses operate smarter, move faster, and stand apart. Every solution is designed with scalability, security, and long-term success in mind.
+        </p>
+
+        <h3 className='text-2xl md:text-3xl font-semibold mb-8 pl-[2ch] -indent-[2ch] lg:col-span-2'>&gt; Our Capabilities</h3>
+
+        <div className='flex flex-col gap-12 mb-16'>
+          <div>
+            <p className='text-xl md:text-2xl font-semibold mb-2 pl-[2ch] -indent-[2ch]'>&gt; Web Development</p>
+            <p className='text-lg md:text-xl leading-[2.1] pl-[2ch] -indent-[2ch]'>&gt; Modern, responsive websites built for speed, performance, and conversion—crafted to represent your brand and grow your business.</p>
+          </div>
+          <div>
+            <p className='text-xl md:text-2xl font-semibold mb-2 pl-[2ch] -indent-[2ch]'>&gt; Custom Software</p>
+            <p className='text-lg md:text-xl leading-[2.1] pl-[2ch] -indent-[2ch]'>&gt; From internal business tools to full-scale web applications, we develop software tailored to your workflow and goals.</p>
+          </div>
+          <div>
+            <p className='text-xl md:text-2xl font-semibold mb-2 pl-[2ch] -indent-[2ch]'>&gt; UI &amp; UX Design</p>
+            <p className='text-lg md:text-xl leading-[2.1] pl-[2ch] -indent-[2ch]'>&gt; Clean, intuitive interfaces that deliver exceptional user experiences across desktop, tablet, and mobile.</p>
+          </div>
         </div>
-        <div className='md:m-16 m-8'>
-        <motion.div initial={{x:0, opacity:0}} whileInView={{ x: 0, opacity:1 }}  transition={{duration:1.0, delay:0.2}} viewport={{ once: false, amount: 0.1 }} className='text-justify lg:max-w-2xl py-16 px-4 flex flex-col justify-left'>
-            
-            <p className=' text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl max-w-2xl mx-auto text-center pb-16'>
-              Our Services Include
-            </p>
-            <p className='py-2'>
-              Custom Web Design & Development: We build visually appealing, responsive websites using cutting-edge technologies like WordPress, React JS, and Tailwind CSS. Your site will not only look great but function seamlessly across all devices.
-            </p>
-            <p className='py-2'>
-              Responsive & Mobile-First Design: We ensure your website is optimized for the best possible experience, no matter the device or screen size. Whether on desktop, tablet, or smartphone, your site will perform flawlessly.
-            </p>
-            <p className='py-2'>
-              Advanced Backend Development: Our backend solutions, including Node.js, PHP, and various database technologies, allow us to build powerful, scalable websites and applications that are secure and efficient.
-            </p>
-            <p className='py-2'>
-              SEO Optimization: Every website we create is fully optimized for search engines, ensuring that your business gets the visibility it deserves in search results. From meta tags to content optimization, we handle it all to improve your ranking and drive organic traffic.
-            </p>
-            <p className='py-2'>
-              E-Commerce Solutions: If you need an online store, we can design and implement e-commerce solutions that are both user-friendly and secure, with integrated payment gateways and inventory management.
-            </p>
-            <p className='py-2'>
-              Maintenance & Support: We offer ongoing website maintenance to keep your site up-to-date, secure, and performing at its best.
-            </p>
-            <p className='py-2'>
-              At Code Enclave, we are passionate about helping businesses grow online. Whether you need a simple informational website or a full-scale web application, we have the expertise to make it happen. Let us create a custom web solution that reflects your brand and meets your business needs.
-            </p>
-            <p className='py-6 font-bold text-center pb-10'>
-              Ready to get started? Contact us today!
-            </p>
-            <div className='m-auto'>
-              <button className='bg-black text-white w-[150px] rounded-md font-medium mr-3 mx-auto py-3'>
-                <Link to='/ContactUs' className='text-l p-4'>Contact Us</Link>
-              </button>
-              <button className='bg-black text-white w-[150px] rounded-md font-medium ml-3 mx-auto py-3'>
-                <Link to='/Quote' className='text-l p-4'>Get Started</Link>
-              </button>
-            </div>
-          </motion.div>
+
+        <div className='flex flex-col gap-12 mb-16'>
+          <div>
+            <p className='text-xl md:text-2xl font-semibold mb-2 pl-[2ch] -indent-[2ch]'>&gt; Scalable Backend Systems</p>
+            <p className='text-lg md:text-xl leading-[2.1] pl-[2ch] -indent-[2ch]'>&gt; Secure APIs, databases, and server architecture engineered for reliability, performance, and future growth.</p>
+          </div>
+          <div>
+            <p className='text-xl md:text-2xl font-semibold mb-2 pl-[2ch] -indent-[2ch]'>&gt; SEO &amp; Performance Optimization</p>
+            <p className='text-lg md:text-xl leading-[2.1] pl-[2ch] -indent-[2ch]'>&gt; Fast-loading, search-optimized websites that improve visibility and help customers find your business.</p>
+          </div>
+          <div>
+            <p className='text-xl md:text-2xl font-semibold mb-2 pl-[2ch] -indent-[2ch]'>&gt; Support &amp; Evolution</p>
+            <p className='text-lg md:text-xl leading-[2.1] pl-[2ch] -indent-[2ch]'>&gt; Technology should evolve with your business. We provide ongoing maintenance, enhancements, and long-term technical support.</p>
+          </div>
+        </div>
+
+        <div className='border-t border-amber-400 opacity-40 mb-12 lg:col-span-2' />
+
+        <h3 className='text-2xl md:text-3xl font-semibold mb-6 pl-[2ch] -indent-[2ch] lg:col-span-2'>&gt; Build Beyond the Template.</h3>
+        <p className='text-lg md:text-xl leading-[2.1] mb-12 pl-[2ch] -indent-[2ch] lg:col-span-2'>
+          &gt; Whether you need a professional website, a custom web application, or software built around your business, we create digital solutions that are engineered to perform—and built to last.
+        </p>
+
+        <Link
+          to='/ContactUs'
+          className='inline-block text-3xl md:text-4xl font-bold no-underline lg:col-span-2'
+        >
+          &gt; [Contact Us]
+        </Link>
       </div>
       </div>
     </div>

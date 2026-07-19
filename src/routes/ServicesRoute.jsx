@@ -22,9 +22,14 @@ const ServicesRoute = () => {
       <ScrollToTop />
       <Navbar />
       <ServicesHero />
-      <Analytics />
-      <Cards />
-      <Quote />
+      <section className='relative bg-black overflow-hidden'>
+        <div className='pointer-events-none absolute inset-0 z-0 amber-fixed-section-shade' />
+        <div className='relative z-10'>
+          <Analytics />
+          <Cards />
+          <Quote />
+        </div>
+      </section>
       <Footer />
     </div>
   )

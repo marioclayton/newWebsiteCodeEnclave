@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Portfolio from '../components/portfolio';
 import PortfolioHero from '../components/PortfolioHero';
 import Testimonials from '../components/Testimonials';
+import ContactUs from '../components/ContactUs';
 import ScrollToTop from "../scrollToTop.jsx";
 
 import { Helmet } from 'react-helmet';
@@ -21,8 +22,14 @@ const PortfolioRoute = () => {
       <ScrollToTop />
       <Navbar />
       <PortfolioHero />
-      <Portfolio />
-      <Testimonials />
+      <section data-nav-theme='cyan' className='relative bg-black overflow-hidden'>
+        <div className='pointer-events-none absolute inset-0 z-0 cyan-fixed-section-shade' />
+        <div className='relative z-10'>
+          <Portfolio />
+          <Testimonials />
+          <ContactUs />
+        </div>
+      </section>
       <Footer />
     </div>
   )

@@ -25,11 +25,21 @@ function App() {
       <ScrollToTop />
       <Navbar />
       <Hero /> 
-      <Analytics />
-      <Cards />
-      <Portfolio />
-      <Testimonials />
-      <ContactUs />
+      <section className='relative bg-black overflow-hidden'>
+        <div className='pointer-events-none absolute inset-0 z-0 amber-fixed-section-shade' />
+        <div className='relative z-10'>
+          <Analytics />
+          <Cards />
+        </div>
+      </section>
+      <section data-nav-theme='cyan' className='relative bg-black overflow-hidden'>
+        <div className='pointer-events-none absolute inset-0 z-0 cyan-fixed-section-shade' />
+        <div className='relative z-10'>
+          <Portfolio />
+          <Testimonials />
+          <ContactUs />
+        </div>
+      </section>
       <Footer />
       
     </div>

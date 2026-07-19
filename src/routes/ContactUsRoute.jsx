@@ -1,5 +1,4 @@
 import React from 'react'
-import ContactUs from '../components/ContactUs';
 import ContactHero from '../components/ContactHero';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -20,7 +19,6 @@ const ContactUsRoute = () => {
       <ScrollToTop />
       <Navbar />
       <ContactHero />
-      <ContactUs />
       <Footer />
     </div>
   )

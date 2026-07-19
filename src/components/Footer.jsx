@@ -37,7 +37,6 @@ const Footer = () => {
     <div>
         <h6 className='font-medium text-gray-400'>Support</h6>
         <ul>
-            <li className='py-2 text-sm'><Link to='/Services'>Pricing</Link></li>
             <li className='py-2 text-sm'><Link to='/ContactUs'>Contact Us</Link></li>
             <li className='py-2 text-sm'><Link to='/Quote'>Quote</Link></li>
         </ul>
@@ -46,7 +45,7 @@ const Footer = () => {
         <h6 className='font-medium text-gray-400'>Company</h6>
         <ul>
             <li className='py-2 text-sm'><Link to='/'>Home</Link></li>
-            <li className='py-2 text-sm'><Link to='/Services'>Services</Link></li>
+            <li className='py-2 text-sm'><Link to='/Services'>Solutions</Link></li>
             <li className='py-2 text-sm'><Link to='/Portfolio'>Portfolio</Link></li>
         </ul>
     </div>
