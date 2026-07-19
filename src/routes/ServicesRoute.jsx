@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import ScrollToTop from "../scrollToTop.jsx";
 import Quote from "../components/Quote.jsx";
+import ServicesHero from '../components/ServicesHero';
 import { Helmet } from 'react-helmet';
 
 
@@ -20,6 +21,7 @@ const ServicesRoute = () => {
       </Helmet>
       <ScrollToTop />
       <Navbar />
+      <ServicesHero />
       <Analytics />
       <Cards />
       <Quote />

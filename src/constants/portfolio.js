@@ -3,13 +3,7 @@ import Portfolio2 from '../assets/project2.png';
 import Portfolio3 from '../assets/project3.png';
 
 export const Projects = [
-    { 
-        company: "VS Shining Stars Cleaning", 
-        name: "Cleaning website", 
-        description: "Used Wordpress to build the website", 
-        image: Portfolio1, 
-        href: "https://vsshiningstars.com",
-    },
+   
     { 
         company: "Resplandece Mujer", 
         name: "Online Blog", 

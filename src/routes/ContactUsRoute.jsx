@@ -1,5 +1,6 @@
 import React from 'react'
 import ContactUs from '../components/ContactUs';
+import ContactHero from '../components/ContactHero';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToTop from "../scrollToTop.jsx";
@@ -18,6 +19,7 @@ const ContactUsRoute = () => {
             </Helmet>
       <ScrollToTop />
       <Navbar />
+      <ContactHero />
       <ContactUs />
       <Footer />
     </div>
