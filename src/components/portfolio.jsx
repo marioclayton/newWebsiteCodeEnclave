@@ -37,7 +37,16 @@ const portfolio = () => {
                     {Projects.slice(currentIndex, currentIndex + itemsPerPage).map((link, index) => (
                         <article key={index} className="group h-full flex flex-col">
                             <div className="border-2 border-cyan-300/90 rounded-md bg-black/40 p-2">
-                                <img className='w-full h-[190px] sm:h-[220px] object-cover rounded' src={link.image} alt={link.name} />
+                                                                <img
+                                                                    className='w-full h-[190px] sm:h-[220px] object-cover rounded'
+                                                                    src={link.image}
+                                                                    alt={link.name}
+                                                                    loading='lazy'
+                                                                    decoding='async'
+                                                                    width='800'
+                                                                    height='448'
+                                                                    sizes='(max-width: 640px) 100vw, 392px'
+                                                                />
                             </div>
                             <div className='mt-2 border-2 border-cyan-300/90 rounded-md bg-black/45 px-4 py-6 retro-display-cyan flex flex-col flex-1'>
                                 <span className="mb-2 text-xs font-medium text-cyan-100/90 tracking-wide pl-[2ch] -indent-[2ch]">

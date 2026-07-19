@@ -10,17 +10,22 @@ const Navbar = () => {
   const [isCyanZone, setIsCyanZone] = useState(false)
   const location = useLocation()
   const currentPath = location.pathname.toLowerCase()
-  const isHeroRoute = currentPath === '/' || currentPath === '/services' || currentPath === '/portfolio'
-  const isContactRoute = currentPath.startsWith('/contactus')
-  const isRequestReceivedRoute = currentPath.startsWith('/requestreceived')
-  const isWhiteRoute = currentPath === '/webdev' || currentPath === '/branding' || currentPath === '/seo' || currentPath === '/privacy'
+  const normalizedPath = currentPath.length > 1 && currentPath.endsWith('/')
+    ? currentPath.slice(0, -1)
+    : currentPath
+  const isHeroRoute = normalizedPath === '/' || normalizedPath === '/services' || normalizedPath === '/portfolio'
+  const isContactRoute = normalizedPath.startsWith('/contactus')
+  const isRequestReceivedRoute = normalizedPath.startsWith('/requestreceived')
+  const isWhiteRoute = normalizedPath === '/webdev' || normalizedPath === '/branding' || normalizedPath === '/seo' || normalizedPath === '/privacy'
+  const knownRoutes = ['/', '/services', '/portfolio', '/contactus', '/privacy', '/quote', '/branding', '/seo', '/webdev', '/requestreceived', '/404']
+  const isNotFoundRoute = normalizedPath.startsWith('/404') || !knownRoutes.includes(normalizedPath)
 
   const handleNav = () => {
     setNav(!nav)
   }
 
   useEffect(() => {
-    if (isContactRoute || isRequestReceivedRoute) {
+    if (isContactRoute || isRequestReceivedRoute || isNotFoundRoute) {
       setIsPinned(false)
       return
     }
@@ -62,7 +67,7 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('resize', handleScroll)
     }
-  }, [isHeroRoute, isContactRoute, isRequestReceivedRoute])
+  }, [isHeroRoute, isContactRoute, isRequestReceivedRoute, isNotFoundRoute])
 
   useEffect(() => {
     setNav(true)
@@ -107,19 +112,19 @@ const Navbar = () => {
     ? (isPinned
       ? 'z-50 fixed top-0 left-0 w-full bg-black retro-display-amber'
       : 'z-50 absolute top-0 left-0 w-full bg-transparent retro-display')
-    : (isContactRoute || isRequestReceivedRoute
+    : (isContactRoute || isRequestReceivedRoute || isNotFoundRoute
       ? 'z-50 absolute top-0 left-0 w-full bg-transparent retro-display'
       : (isWhiteRoute
         ? 'z-50 sticky top-0 bg-black retro-display-white'
         : 'z-50 sticky top-0 bg-black retro-display-amber'))
 
-  const navWrapperClass = (isContactRoute || isRequestReceivedRoute)
+  const navWrapperClass = (isContactRoute || isRequestReceivedRoute || isNotFoundRoute)
     ? 'z-50 absolute top-0 left-0 w-full bg-transparent retro-display'
     : (isCyanZone
       ? baseNavWrapperClass.replace('retro-display-amber', 'retro-display-cyan')
       : baseNavWrapperClass)
 
-  const mobilePanelBgClass = (isContactRoute || isRequestReceivedRoute) ? 'bg-transparent' : 'bg-black'
+  const mobilePanelBgClass = 'bg-black'
 
   return (
     <div className={navWrapperClass}>
@@ -128,18 +133,26 @@ const Navbar = () => {
           {'<code>'}<br />{'</enclave>'}
         </p>
         <ul className='hidden md:flex'>
-          <NavLink to="/" end className='text-xl md:text-2xl p-4'>
-            {({ isActive }) => (isActive ? '[HOME]' : 'HOME')}
-          </NavLink>
-          <NavLink to="/Services" end className='text-xl md:text-2xl p-4'>
-            {({ isActive }) => (isActive ? '[SOLUTIONS]' : 'SOLUTIONS')}
-          </NavLink>
-          <NavLink to="/Portfolio" end className='text-xl md:text-2xl p-4'>
-            {({ isActive }) => (isActive ? '[PORTFOLIO]' : 'PORTFOLIO')}
-          </NavLink>
-          <NavLink to="/ContactUs" end className='text-xl md:text-2xl p-4'>
-            {({ isActive }) => (isActive ? '[CONTACT US]' : 'CONTACT US')}
-          </NavLink>
+          <li>
+            <NavLink to="/" end className='text-xl md:text-2xl p-4'>
+              {({ isActive }) => (isActive ? '[HOME]' : 'HOME')}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/Services" end className='text-xl md:text-2xl p-4'>
+              {({ isActive }) => (isActive ? '[SOLUTIONS]' : 'SOLUTIONS')}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/Portfolio" end className='text-xl md:text-2xl p-4'>
+              {({ isActive }) => (isActive ? '[PORTFOLIO]' : 'PORTFOLIO')}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/ContactUs" end className='text-xl md:text-2xl p-4'>
+              {({ isActive }) => (isActive ? '[CONTACT US]' : 'CONTACT US')}
+            </NavLink>
+          </li>
         </ul>
         <div onClick={handleNav} className='block md:hidden'>
         {!nav ? <AiOutlineClose size={35}/> : <AiOutlineMenu size={35}/>}
@@ -149,20 +162,27 @@ const Navbar = () => {
             {'<code>'}<br />{'</enclave>'}
           </p>
             <ul className='uppercase p-4'>
-              
-            <NavLink to="/" end className='grid text-xl md:text-2xl p-4 border-b border-gray-600'>
-              {({ isActive }) => (isActive ? '[HOME]' : 'HOME')}
-            </NavLink>
-            <NavLink to="/Services" end className='grid text-xl md:text-2xl p-4 border-b border-gray-600'>
-              {({ isActive }) => (isActive ? '[SOLUTIONS]' : 'SOLUTIONS')}
-            </NavLink>
-            <NavLink to="/Portfolio" end className='grid text-xl md:text-2xl p-4 border-b border-gray-600'>
-              {({ isActive }) => (isActive ? '[PORTFOLIO]' : 'PORTFOLIO')}
-            </NavLink>
-            <NavLink to="/ContactUs" end className='grid text-xl md:text-2xl p-4 border-b border-gray-600'>
-              {({ isActive }) => (isActive ? '[CONTACT US]' : 'CONTACT US')}
-            </NavLink>
-        </ul>
+              <li>
+                <NavLink to="/" end className='grid text-xl md:text-2xl p-4 border-b border-gray-600'>
+                  {({ isActive }) => (isActive ? '[HOME]' : 'HOME')}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/Services" end className='grid text-xl md:text-2xl p-4 border-b border-gray-600'>
+                  {({ isActive }) => (isActive ? '[SOLUTIONS]' : 'SOLUTIONS')}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/Portfolio" end className='grid text-xl md:text-2xl p-4 border-b border-gray-600'>
+                  {({ isActive }) => (isActive ? '[PORTFOLIO]' : 'PORTFOLIO')}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/ContactUs" end className='grid text-xl md:text-2xl p-4 border-b border-gray-600'>
+                  {({ isActive }) => (isActive ? '[CONTACT US]' : 'CONTACT US')}
+                </NavLink>
+              </li>
+            </ul>
         </div>
       </div>
     </div>

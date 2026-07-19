@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Prevent indexing of backend endpoints
+Disallow: /backend/
+
+Sitemap: https://codeenclave.com/sitemap.xml

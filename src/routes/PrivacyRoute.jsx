@@ -10,9 +10,9 @@ const PrivacyRoute = () => {
     <div>
       <Helmet>
               <title>Code Enclave LLC - Privacy</title>
-              <meta name="description" content="Learn how Code Enclave LLC ensures that your data remaiums private." />
+              <meta name="description" content="Learn how Code Enclave LLC ensures that your data remains private." />
               <meta property="og:title" content="Code Enclave LLC - Privacy" />
-              <meta property="og:description" content="Learn how Code Enclave LLC ensures that your data remaiums private." />
+              <meta property="og:description" content="Learn how Code Enclave LLC ensures that your data remains private." />
               <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Helmet>
         <ScrollToTop />

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const Quote = () => {
 
   const [formData, setFormData] = useState({ from_name: '', company: '', email: '', phone: '', subject: 'Quote', message: '' });
-  const [isSubmitting, setStatus] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
@@ -20,26 +20,37 @@ const Quote = () => {
       
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("Sending...");
+    setIsSubmitting(true);
     setLoading(true);
     
       try {
-        const response = await fetch("http://codeenclave.com/backend/send-quote.php", {
+        const payload = new URLSearchParams();
+        payload.append('from_name', formData.from_name);
+        payload.append('company', formData.company);
+        payload.append('email', formData.email);
+        payload.append('phone', formData.phone);
+        payload.append('subject', formData.subject);
+        payload.append('message', formData.message);
+
+        const response = await fetch("/backend/send-quote.php", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: payload.toString(),
         });
   
-        const result = await response.text();
-        setStatus(result);
         if (response.ok) {
           setTimeout(() => {
             setLoading(false);
+            setIsSubmitting(false);
             navigate("/RequestReceived"); // Redirect to another page
           }, 0);
+        } else {
+          setLoading(false);
+          setIsSubmitting(false);
         }
       } catch (error) {
-        setStatus("Error sending message.");
+        setLoading(false);
+        setIsSubmitting(false);
       }
 
   };

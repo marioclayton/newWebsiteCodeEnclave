@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# Keep backend PHP endpoints working
+RewriteRule ^backend/ - [L]
+
+# Serve existing files and directories directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# SPA fallback for client-side routing
+RewriteRule . /index.html [L]
+
+# Optional server-level custom 404 page
+ErrorDocument 404 /404.html

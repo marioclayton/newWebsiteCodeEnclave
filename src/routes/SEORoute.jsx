@@ -9,9 +9,9 @@ const SEORoute = () => {
   return (
     <div>
       <Helmet>
-              <title>Code Enclave LLC - Web Development Services</title>
+              <title>Code Enclave LLC - SEO Services</title>
               <meta name="description" content="Code Enclave LLC provides professional SEO services to help businesses succeed online." />
-              <meta property="og:title" content="Code Enclave LLC - Web Development" />
+              <meta property="og:title" content="Code Enclave LLC - SEO Services" />
               <meta property="og:description" content="Code Enclave LLC provides professional SEO services to help businesses succeed online." />
               <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Helmet>

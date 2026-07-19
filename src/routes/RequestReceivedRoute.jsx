@@ -14,6 +14,7 @@ const RequestReceivedRoute = () => {
               <meta name="description" content="We have received your request and will be in touch shortly." />
               <meta property="og:title" content="Code Enclave LLC - Request Received" />
               <meta property="og:description" content="Request Received." />
+              <meta name="robots" content="noindex, follow" />
               <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Helmet>
       <ScrollToTop />

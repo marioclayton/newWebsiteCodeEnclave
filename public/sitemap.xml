@@ -64,12 +64,4 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- RequestReceived -->
-  <url>
-    <loc>https://codeenclave.com/RequestReceived</loc>
-    <lastmod>2025-02-09</lastmod>
-    <priority>0.0</priority>
-  </url>
-
-
 </urlset>

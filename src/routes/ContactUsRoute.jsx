@@ -10,10 +10,10 @@ const ContactUsRoute = () => {
   return (
     <div> 
       <Helmet>
-              <title>Code Enclave LLC - Request Received</title>
-              <meta name="description" content="We have received your request and will be in touch shortly." />
-              <meta property="og:title" content="Code Enclave LLC - Request Received" />
-              <meta property="og:description" content="Request Received." />
+              <title>Code Enclave LLC - Contact Us</title>
+              <meta name="description" content="Contact Code Enclave LLC for web development, SEO, branding, and project support." />
+              <meta property="og:title" content="Code Enclave LLC - Contact Us" />
+              <meta property="og:description" content="Contact Code Enclave LLC for web development, SEO, branding, and project support." />
               <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Helmet>
       <ScrollToTop />

@@ -1,6 +1,5 @@
-import Portfolio1 from '../assets/project1.png';
-import Portfolio2 from '../assets/project2.png';
-import Portfolio3 from '../assets/project3.png';
+import Portfolio2 from '../assets/project2.webp';
+import Portfolio3 from '../assets/project3.webp';
 
 export const Projects = [
    

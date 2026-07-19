@@ -46,7 +46,7 @@ body {
   display: inline-block; /* or block if it's a section */
   width: 100%; /* Adjust as needed */
   height: 100%; /* Adjust as needed */
-  background-image: url("/src/assets/bgimage.png");
+  background-image: url("/src/assets/bgimage.webp");
   background-size: cover;
   background-position: center;
   background-attachment: scroll;
