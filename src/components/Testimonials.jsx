@@ -2,8 +2,8 @@ import React from 'react'
 
 const Testimonials = () => {
   return (
-    <section className='w-full bg-transparent py-[9rem] sm:py-[11rem] lg:py-[13rem] px-4'>
-      <div className='max-w-[920px] mx-auto retro-display-cyan'>
+    <section className='w-full bg-transparent py-[9rem] sm:py-[11rem] lg:py-[13rem]'>
+      <div className='w-full max-w-[1240px] mx-auto px-4 retro-display-cyan'>
         <h2 className='text-3xl sm:text-4xl font-extrabold mb-12 text-left pl-[2ch] -indent-[2ch]'>&gt; Testimonials</h2>
 
         <div className='border-2 border-cyan-300/90 rounded-md bg-black/45 px-5 py-8'>

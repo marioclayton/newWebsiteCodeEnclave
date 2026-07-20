@@ -24,6 +24,14 @@ const Navbar = () => {
     setNav(!nav)
   }
 
+  const handleLogoClick = () => {
+    if (normalizedPath === '/') {
+      window.scrollTo({top: 0, behavior: 'smooth'})
+    }
+
+    setNav(true)
+  }
+
   useEffect(() => {
     if (isContactRoute || isRequestReceivedRoute || isNotFoundRoute) {
       setIsPinned(false)
@@ -129,9 +137,9 @@ const Navbar = () => {
   return (
     <div className={navWrapperClass}>
       <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 bg-transparent'>
-          <p className='text-2xl md:text-3xl leading-tight'>
-          {'<code>'}<br />{'</enclave>'}
-        </p>
+          <NavLink to='/' end onClick={handleLogoClick} className='text-2xl md:text-3xl leading-tight'>
+            {'<code>'}<br />{'</enclave>'}
+          </NavLink>
         <ul className='hidden md:flex'>
           <li>
             <NavLink to="/" end className='text-xl md:text-2xl p-4'>
@@ -158,9 +166,9 @@ const Navbar = () => {
         {!nav ? <AiOutlineClose size={35}/> : <AiOutlineMenu size={35}/>}
         </div>
         <div className={!nav ? `fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-700 ${mobilePanelBgClass} ease-in-out duration-500 ${isWhiteRoute ? 'retro-display-white' : ''}` : 'fixed left-[-100%]'}>
-          <p className='text-2xl md:text-3xl p-4 leading-tight'>
+          <NavLink to='/' end onClick={handleLogoClick} className='block text-2xl md:text-3xl p-4 leading-tight'>
             {'<code>'}<br />{'</enclave>'}
-          </p>
+          </NavLink>
             <ul className='uppercase p-4'>
               <li>
                 <NavLink to="/" end className='grid text-xl md:text-2xl p-4 border-b border-gray-600'>

@@ -46,7 +46,7 @@ const Analytics = () => {
           </div>
         </div>
 
-        <div className='border-t border-amber-400 opacity-40 mb-12 lg:col-span-2' />
+        <div className='border-t-4 border-amber-400 mb-12 lg:col-span-2' />
 
         <h3 className='text-2xl md:text-3xl font-semibold mb-6 pl-[2ch] -indent-[2ch] lg:col-span-2'>&gt; Build Beyond the Template.</h3>
         <p className='text-lg md:text-xl leading-[2.1] mb-12 pl-[2ch] -indent-[2ch] lg:col-span-2'>

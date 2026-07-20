@@ -8,7 +8,7 @@ import { useState } from "react";
 const portfolio = () => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
-    const itemsPerPage = 6;
+    const itemsPerPage = 9;
 
     const nextPage = () => {
         if (currentIndex + itemsPerPage < Projects.length) {
@@ -23,7 +23,7 @@ const portfolio = () => {
 
     return (
         <section className="bg-transparent antialiased" id="portfolio-content">
-            <div className="max-w-[920px] px-4 py-[6.5rem] mx-auto lg:px-6 sm:py-[7.6rem] lg:py-[8.8rem]">
+            <div className="w-full max-w-[1240px] px-4 py-[6.5rem] mx-auto sm:py-[7.6rem] lg:py-[8.8rem]">
                 <div className="max-w-2xl mr-auto text-left retro-display-cyan">
                     <h2 className="text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl pl-[2ch] -indent-[2ch]">
                         &gt; Our work
@@ -33,20 +33,30 @@ const portfolio = () => {
                     </p>
                 </div>
 
-                <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
+                <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
                     {Projects.slice(currentIndex, currentIndex + itemsPerPage).map((link, index) => (
                         <article key={index} className="group h-full flex flex-col">
                             <div className="border-2 border-cyan-300/90 rounded-md bg-black/40 p-2">
-                                                                <img
-                                                                    className='w-full h-[190px] sm:h-[220px] object-cover rounded'
-                                                                    src={link.image}
-                                                                    alt={link.name}
-                                                                    loading='lazy'
-                                                                    decoding='async'
-                                                                    width='800'
-                                                                    height='448'
-                                                                    sizes='(max-width: 640px) 100vw, 392px'
-                                                                />
+                                <div className='relative overflow-hidden rounded'>
+                                  <img
+                                      className='w-full h-[190px] sm:h-[220px] object-cover'
+                                      src={link.image}
+                                      alt={link.name}
+                                      loading='lazy'
+                                      decoding='async'
+                                      width='800'
+                                      height='448'
+                                      sizes='(max-width: 640px) 100vw, 392px'
+                                  />
+                                  <div className='pointer-events-none absolute inset-0 bg-black/20' />
+                                  <div className='pointer-events-none absolute inset-0 bg-cyan-300/12 mix-blend-screen' />
+                                  <div
+                                      className='pointer-events-none absolute inset-0 opacity-70'
+                                      style={{
+                                          backgroundImage: 'repeating-linear-gradient(0deg, rgba(34, 211, 238, 0.16) 0px, rgba(34, 211, 238, 0.16) 1px, transparent 1px, transparent 3px)'
+                                      }}
+                                  />
+                                </div>
                             </div>
                             <div className='mt-2 border-2 border-cyan-300/90 rounded-md bg-black/45 px-4 py-6 retro-display-cyan flex flex-col flex-1'>
                                 <span className="mb-2 text-xs font-medium text-cyan-100/90 tracking-wide pl-[2ch] -indent-[2ch]">

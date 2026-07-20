@@ -61,8 +61,8 @@ const ContactUs = () => {
   
 
   return (
-    <section className='w-full bg-transparent py-[9rem] sm:py-[11rem] lg:py-[13rem] px-4'>
-      <div className='max-w-[920px] mx-auto retro-display-cyan'>
+    <section className='w-full bg-transparent py-[9rem] sm:py-[11rem] lg:py-[13rem]'>
+      <div className='w-full max-w-[1240px] mx-auto px-4 retro-display-cyan'>
         <h2 className='mb-4 text-3xl sm:text-4xl tracking-tight font-extrabold text-left pl-[2ch] -indent-[2ch]'>&gt; Contact Us</h2>
         <p className='mb-12 text-base sm:text-xl text-cyan-100/90 leading-relaxed text-left pl-[2ch] -indent-[2ch]'>&gt; Got a technical issue? Want to send feedback about a beta feature? Need details about our business plan? Let us know.</p>
 

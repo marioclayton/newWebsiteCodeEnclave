@@ -123,7 +123,7 @@ const ServicesHero = () => {
 
   return (
     <div className='overlay-container mt-[-96px] pt-[96px]'>
-      <div className='max-w-[800px] w-[90%] sm:w-[82%] lg:w-[60%] h-screen ml-[6%] sm:ml-[12%] lg:ml-[20%] pr-4 sm:pr-6 md:pr-10 text-left flex flex-col justify-center items-start overlay-content retro-display'>
+      <div className='w-full max-w-[1240px] h-screen mx-auto px-4 text-left flex flex-col justify-center items-start overlay-content retro-display'>
         <h1 className={`${lineTextClass} md:py-6 h-[4.25rem] md:h-[5rem] w-full flex items-center justify-start`}>
           {renderTypedLine(typedLines[0], 0)}
         </h1>

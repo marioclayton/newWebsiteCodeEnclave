@@ -28,6 +28,9 @@ const ContactHero = () => {
   const promptPrefix = '> ';
   const typingSpeed = 17;
   const lineTextClass = 'md:text-3xl sm:text-2xl text-xl';
+  const contactPhone = '305-322-0401';
+  const contactPhoneHref = 'tel:+13053220401';
+  const contactEmail = 'support@codeenclave.com';
 
   const activePrompt = prompts[promptIndex];
   const committedCount = completedEntries.length;
@@ -182,13 +185,34 @@ const ContactHero = () => {
 
   return (
     <div className='overlay-container mt-[-96px] pt-[96px]'>
+      <div className='overlay-content absolute inset-x-0 bottom-5 px-4 md:hidden retro-display'>
+        <div className='max-w-[1240px] mx-auto flex flex-col items-start gap-1'>
+          <a href={contactPhoneHref} className='text-base sm:text-lg'>
+            {`${promptPrefix}${contactPhone}`}
+          </a>
+          <a href={`mailto:${contactEmail}`} className='text-base sm:text-lg'>
+            {`${promptPrefix}${contactEmail}`}
+          </a>
+        </div>
+      </div>
+
       <div
-        className='max-w-[900px] w-[90%] sm:w-[82%] lg:w-[60%] h-screen ml-[6%] sm:ml-[12%] lg:ml-[20%] pr-4 sm:pr-6 md:pr-10 text-left flex flex-col justify-center items-start overlay-content retro-display'
+        className='w-full max-w-[1240px] h-screen mx-auto px-4 text-left flex flex-col justify-center items-start overlay-content retro-display'
         onClick={() => inputRef.current?.focus()}
       >
-        <h1 className={`${lineTextClass} md:py-6 h-[4.25rem] md:h-[5rem] w-full flex items-center justify-start`}>
-          {`${promptPrefix}Contact us`}
-        </h1>
+        <div className='w-full md:flex md:items-start md:justify-between'>
+          <h1 className={`${lineTextClass} md:py-6 h-[4.25rem] md:h-[5rem] w-full md:flex-1 flex items-center justify-start`}>
+            {`${promptPrefix}Contact us`}
+          </h1>
+          <div className='hidden md:flex md:py-6 flex-col items-end gap-1 text-right'>
+            <a href={contactPhoneHref} className='md:text-xl lg:text-2xl'>
+              {`${promptPrefix}${contactPhone}`}
+            </a>
+            <a href={`mailto:${contactEmail}`} className='md:text-xl lg:text-2xl'>
+              {`${promptPrefix}${contactEmail}`}
+            </a>
+          </div>
+        </div>
 
         {showResultView ? (
           <>
@@ -220,31 +244,28 @@ const ContactHero = () => {
           </>
         ) : (
           <>
-            <div className='w-full h-[32rem] md:h-[38rem] flex flex-col'>
+            <div className='w-full h-[18rem] md:h-[20rem] flex flex-col'>
               {prompts.map((prompt, index) => {
                 const promptText = index < committedCount
                   ? `${promptPrefix}${prompt.label}`
                   : (index === committedCount && !showSubmit ? `${promptPrefix}${typedPrompt || '\u00A0'}` : '\u00A0\u00A0');
 
                 const committedValue = completedEntries[index]?.value || '';
-                const inputText = index < committedCount
-                  ? `${promptPrefix}${committedValue}`
-                  : (index === committedCount && !showSubmit && isPromptReady ? `${promptPrefix}${currentInput}` : '\u00A0\u00A0');
+                const lineValue = index < committedCount
+                  ? `${promptText} ${committedValue}`
+                  : (index === committedCount && !showSubmit && isPromptReady ? `${promptText} ${currentInput}` : promptText);
 
                 return (
                   <div key={prompt.key} className='w-full'>
-                    <p className={`${lineTextClass} w-full h-[3.75rem] md:h-[4.5rem] flex items-center pl-[2ch] -indent-[2ch]`}>
-                      {promptText}
-                    </p>
-                    <p className={`${lineTextClass} w-full h-[3.75rem] md:h-[4.5rem] flex items-center`}>
-                      {inputText}
+                    <p className={`${lineTextClass} w-full h-[2.75rem] md:h-[3rem] flex items-center pl-[2ch] -indent-[2ch]`}>
+                      {lineValue}
                       {index === committedCount && !showSubmit && isPromptReady && renderBlinkingCursor()}
                     </p>
                   </div>
                 );
               })}
 
-              <p className={`${lineTextClass} w-full h-[3.75rem] md:h-[4.5rem] flex items-center`}>
+              <p className={`${lineTextClass} w-full h-[2.75rem] md:h-[3rem] flex items-center`}>
                 {showSubmit ? inputLineText : '\u00A0\u00A0'}
                 {showSubmit && renderBlinkingCursor()}
               </p>
