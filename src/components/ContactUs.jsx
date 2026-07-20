@@ -156,14 +156,12 @@ const ContactUs = () => {
 
       <h2 className='mb-4 text-xl sm:text-2xl tracking-tight font-extrabold text-left pl-[2ch] -indent-[2ch]'>&gt; Call Us</h2>
       <div className='flex items-center flex-wrap gap-3 mb-10 pl-[2ch] -indent-[2ch]'> 
-        <p className='font-light text-cyan-100/90 sm:text-xl'>&gt; You can reach us at </p>
-        <a href='tel:+13053220401' className='font-light sm:text-xl'>305-322-0401</a>
+        <p className='font-light text-cyan-100/90 sm:text-xl'>&gt; You can reach us at <a href='tel:+13053220401' className='font-light sm:text-xl'>305-322-0401</a></p>
         <FaPhone className='text-cyan-100 sm:text-xl'/>
       </div>
       <h2 className='mb-4 text-xl sm:text-2xl tracking-tight font-extrabold text-left pl-[2ch] -indent-[2ch]'>&gt; Email Us</h2>
       <div className='flex items-center flex-wrap gap-3 pl-[2ch] -indent-[2ch]'> 
-        <p className='font-light text-cyan-100/90 sm:text-xl'>&gt; Email us at </p>
-        <a href='mailto:support@codeenclave.com' className='font-light sm:text-xl'>support@codeenclave.com</a>
+        <p className='font-light text-cyan-100/90 sm:text-xl'>&gt; Email us at <a href='mailto:support@codeenclave.com' className='font-light sm:text-xl'>support@codeenclave.com</a></p>
         <MdEmail className='text-cyan-100 sm:text-xl'/>
       </div>
 
