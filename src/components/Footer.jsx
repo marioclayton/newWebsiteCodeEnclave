@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <div className='max-w-[1240px] mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-gray-300'>
       <div>
-        <img className='w-[150px]  my-4' src={Logo} alt='/' />
+        <img className='w-[150px] my-4 h-auto' src={Logo} alt='Code Enclave logo' width='300' height='84' />
         <p className='py-4'>Helping small and medium-sized businesses establish a strong and effective online presence.</p>
         {/*<div className='flex justify-between md:w-[75%] my-6'>
             <FaFacebookSquare size={30} />

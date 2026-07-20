@@ -1,12 +1,10 @@
-import React, { useState  } from 'react'
+import React, { useState } from 'react'
 import {motion} from 'framer-motion';
 import {Link} from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const Newsletter = () => {
-
 
   const [formData, setFormData] = useState({ user_email: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);

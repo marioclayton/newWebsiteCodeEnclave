@@ -17,11 +17,39 @@ const Hero = () => {
   const [buttonCharIndex, setButtonCharIndex] = useState(0);
   const [typedScrollHint, setTypedScrollHint] = useState('');
   const [scrollHintCharIndex, setScrollHintCharIndex] = useState(0);
+  const [isStaticHero, setIsStaticHero] = useState(false);
   const promptPrefix = '> ';
   const buttonText = 'Start here';
   const scrollHintText = 'Scroll down for more';
   const typingSpeed = 17;
   const lineTextClass = 'md:text-4xl sm:text-3xl text-2xl';
+
+  useEffect(() => {
+    const updateStaticHeroPreference = () => {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const useStaticHero = prefersReducedMotion;
+
+      setIsStaticHero(useStaticHero);
+
+      if (useStaticHero) {
+        setTypedLines(heroLines);
+        setLineIndex(heroLines.length);
+        setCharIndex(0);
+        setShowButton(true);
+        setTypedButton(buttonText);
+        setButtonCharIndex(buttonText.length + 1);
+        setTypedScrollHint(scrollHintText);
+        setScrollHintCharIndex(scrollHintText.length + 1);
+      }
+    };
+
+    updateStaticHeroPreference();
+    window.addEventListener('resize', updateStaticHeroPreference);
+
+    return () => {
+      window.removeEventListener('resize', updateStaticHeroPreference);
+    };
+  }, []);
 
   const renderTypedLine = (line, index) => {
     const isActiveLine = !showButton && lineIndex === index;
@@ -32,7 +60,7 @@ const Hero = () => {
       <>
         {hasLineStarted ? promptPrefix : '\u00A0\u00A0'}
         {safeLine}
-        {isActiveLine && (
+        {!isStaticHero && isActiveLine && (
           <motion.span
             animate={{opacity: [1, 1, 0, 0, 1, 1]}}
             transition={{
@@ -51,6 +79,10 @@ const Hero = () => {
   };
 
   useEffect(() => {
+    if (isStaticHero) {
+      return;
+    }
+
     if (lineIndex >= heroLines.length) {
       if (!showButton) {
         setShowButton(true);
@@ -79,9 +111,13 @@ const Hero = () => {
     }, 110);
 
     return () => clearTimeout(nextLineTimer);
-  }, [charIndex, lineIndex, showButton]);
+  }, [charIndex, lineIndex, showButton, isStaticHero]);
 
   useEffect(() => {
+    if (isStaticHero) {
+      return;
+    }
+
     if (!showButton) {
       return;
     }
@@ -96,11 +132,15 @@ const Hero = () => {
     }, typingSpeed);
 
     return () => clearTimeout(buttonTypeTimer);
-  }, [showButton, buttonCharIndex]);
+  }, [showButton, buttonCharIndex, isStaticHero]);
 
   const isButtonTypingComplete = typedButton.length >= buttonText.length;
 
   useEffect(() => {
+    if (isStaticHero) {
+      return;
+    }
+
     if (!isButtonTypingComplete) {
       return;
     }
@@ -115,7 +155,7 @@ const Hero = () => {
     }, typingSpeed);
 
     return () => clearTimeout(scrollHintTypeTimer);
-  }, [isButtonTypingComplete, scrollHintCharIndex]);
+  }, [isButtonTypingComplete, scrollHintCharIndex, isStaticHero]);
 
   const isScrollHintTypingComplete = typedScrollHint.length >= scrollHintText.length;
   const showFinalPrompt = showButton && isButtonTypingComplete && isScrollHintTypingComplete;
@@ -154,7 +194,7 @@ const Hero = () => {
         </p>
         <p className='w-full min-h-[2rem] font-black text-[2rem] leading-none'>
           {showFinalPrompt ? promptPrefix : '\u00A0\u00A0'}
-          {showFinalPrompt ? (
+          {showFinalPrompt && !isStaticHero ? (
             <motion.span
               animate={{opacity: [1, 1, 0, 0, 1, 1]}}
               transition={{
@@ -166,6 +206,8 @@ const Hero = () => {
             >
               _
             </motion.span>
+          ) : showFinalPrompt ? (
+            <span>_</span>
           ) : (
             <span>{'\u00A0'}</span>
           )}

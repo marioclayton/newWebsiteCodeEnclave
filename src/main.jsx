@@ -1,33 +1,39 @@
-import { StrictMode } from 'react'
+import { StrictMode, Suspense, lazy } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import ServicesRoute from './routes/ServicesRoute.jsx';
-import PortfolioRoute from './routes/PortfolioRoute.jsx';
-import ContactUsRoute from './routes/ContactUsRoute.jsx';
-import PrivacyRoute from './routes/PrivacyRoute.jsx';
-import QuoteRoute from './routes/QuoteRoute.jsx';
-import BrandingRoute from './routes/BrandingRoute.jsx';
-import SEORoute from './routes/SEORoute.jsx';
-import WebDevRoute from './routes/WebDevRoute.jsx';
-import RequestReceivedRoute from './routes/RequestReceivedRoute.jsx';
-import NotFoundRoute from './routes/NotFoundRoute.jsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
+const ServicesRoute = lazy(() => import('./routes/ServicesRoute.jsx'));
+const PortfolioRoute = lazy(() => import('./routes/PortfolioRoute.jsx'));
+const ContactUsRoute = lazy(() => import('./routes/ContactUsRoute.jsx'));
+const PrivacyRoute = lazy(() => import('./routes/PrivacyRoute.jsx'));
+const QuoteRoute = lazy(() => import('./routes/QuoteRoute.jsx'));
+const BrandingRoute = lazy(() => import('./routes/BrandingRoute.jsx'));
+const SEORoute = lazy(() => import('./routes/SEORoute.jsx'));
+const WebDevRoute = lazy(() => import('./routes/WebDevRoute.jsx'));
+const RequestReceivedRoute = lazy(() => import('./routes/RequestReceivedRoute.jsx'));
+const NotFoundRoute = lazy(() => import('./routes/NotFoundRoute.jsx'));
+
+const withSuspense = (Component) => (
+  <Suspense fallback={<div className='min-h-screen bg-black' />}>
+    <Component />
+  </Suspense>
+);
 
 
 const router = createBrowserRouter([
   {path: '/', element: <App />},
-  {path: '/Services', element: <ServicesRoute />},
-  {path: '/Portfolio', element: <PortfolioRoute />},
-  {path: '/ContactUs', element: <ContactUsRoute />},
-  {path: '/Privacy', element: <PrivacyRoute />,},  
-  {path: '/Quote', element: <QuoteRoute />,},
-  {path: '/Branding', element: <BrandingRoute />},
-  {path: '/SEO', element: <SEORoute />},
-  {path: '/WebDev', element: <WebDevRoute />},
-  {path: '/RequestReceived', element: <RequestReceivedRoute />},
-  {path: '*', element: <NotFoundRoute />,}
+  {path: '/Services', element: withSuspense(ServicesRoute)},
+  {path: '/Portfolio', element: withSuspense(PortfolioRoute)},
+  {path: '/ContactUs', element: withSuspense(ContactUsRoute)},
+  {path: '/Privacy', element: withSuspense(PrivacyRoute)},
+  {path: '/Quote', element: withSuspense(QuoteRoute)},
+  {path: '/Branding', element: withSuspense(BrandingRoute)},
+  {path: '/SEO', element: withSuspense(SEORoute)},
+  {path: '/WebDev', element: withSuspense(WebDevRoute)},
+  {path: '/RequestReceived', element: withSuspense(RequestReceivedRoute)},
+  {path: '*', element: withSuspense(NotFoundRoute)}
 ])
 
 createRoot(document.getElementById('root')).render(

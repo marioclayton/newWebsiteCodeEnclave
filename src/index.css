@@ -4,18 +4,21 @@
 
 @font-face {
   font-family: "myfont";
-  src: url("assets/Consolas.woff") format("woff");
+  src: local("Consolas"), local("Consolas Regular"), url("assets/Consolas.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "myfont";
-  src: url("assets/Consolas-Bold.woff") format("woff");
+  src: local("Consolas Bold"), local("Consolas-Bold"), url("assets/Consolas-Bold.woff") format("woff");
   font-weight: bold;
+  font-display: swap;
 }
 
 body {
   background-color: #000000;
-  font-family: myfont;
+  font-family: myfont, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 15px;
   font-style: normal;
   font-variant: normal;
@@ -23,7 +26,7 @@ body {
   line-height: 18.5714px;
   --toastify-color-light: #000000;
   --toastify-text-color-light: #ffffff;
-  --toastify-font-family: myfont;
+  --toastify-font-family: myfont, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --toastify-font-size: 15px;
   --toastify-font-style: normal;
   --toastify-font-variant: normal;
@@ -37,6 +40,13 @@ body {
     #dcf7e3,
     #ffffff
   );
+}
+
+@media (max-width: 768px) {
+  body {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --toastify-font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
 }
 
 
