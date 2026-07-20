@@ -1,5 +1,6 @@
 import Portfolio2 from '../assets/project2.webp';
 import Portfolio3 from '../assets/project3.webp';
+import Portfolio4 from '../assets/project4.webp';
 
 export const Projects = [
    
@@ -17,6 +18,11 @@ export const Projects = [
         image: Portfolio3, 
         href: "https://blueskyelite.com/",
     },
-    
-    
+    {
+        company: "Up and Pop",
+        name: "Small Business Website",
+        description: "Used React and Tailwind CSS to build the website, and optimized it for SEO",
+        image: Portfolio4,
+        href: "https://upandpop.co",
+    },
 ];
