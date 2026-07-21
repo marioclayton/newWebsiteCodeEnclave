@@ -1,6 +1,8 @@
 import React from 'react'
 import { Projects } from "../constants/portfolio.js";
 import { useState } from "react";
+import {Link} from 'react-router-dom';
+import {servicePages} from '../constants/servicePages.js';
 
 
     
@@ -29,7 +31,7 @@ const portfolio = () => {
                         &gt; Our work
                     </h2>
                     <p className="mt-4 text-base font-normal sm:text-xl text-cyan-200/90 pl-[2ch] -indent-[2ch]">
-                        &gt; Crafted with skill and care to help our clients grow their business.
+                        &gt; Custom web development and software solutions delivering measurable business outcomes.
                     </p>
                 </div>
 
@@ -68,13 +70,24 @@ const portfolio = () => {
                                 <p className="mb-3 text-sm sm:text-base text-cyan-100/90 leading-relaxed flex-1 pl-[2ch] -indent-[2ch]">
                                     &gt; {link.description}
                                 </p>
+                                                                <div className='mb-4 flex flex-wrap gap-2'>
+                                                                    {(link.relatedServices || []).slice(0, 2).map((serviceSlug) => (
+                                                                        <Link
+                                                                            key={serviceSlug}
+                                                                            to={`/services/${serviceSlug}`}
+                                                                            className='text-xs sm:text-sm border border-cyan-300/60 rounded px-2 py-1'
+                                                                        >
+                                                                            {servicePages[serviceSlug]?.h1 || 'Service'}
+                                                                        </Link>
+                                                                    ))}
+                                                                </div>
                                 <a
                                     href={link.href}
                                     className="text-cyan-100 inline-flex items-center font-bold text-lg sm:text-xl pl-[2ch] -indent-[2ch]"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    &gt; [View Case Study]
+                                    &gt; [View Project]
                                 </a>
                             </div>
                         </article>
@@ -86,7 +99,7 @@ const portfolio = () => {
                         className="retro-display-cyan text-3xl sm:text-4xl font-bold px-2 text-cyan-100 disabled:opacity-35"
                         onClick={prevPage}
                         disabled={currentIndex === 0}
-                        aria-label="Previous portfolio items"
+                        aria-label="Previous project page"
                     >
                         {'<'}
                     </button>
@@ -94,7 +107,7 @@ const portfolio = () => {
                         className="retro-display-cyan text-3xl sm:text-4xl font-bold px-2 text-cyan-100 disabled:opacity-35"
                         onClick={nextPage}
                         disabled={currentIndex + itemsPerPage >= Projects.length}
-                        aria-label="Next portfolio items"
+                        aria-label="Next project page"
                     >
                         {'>'}
                     </button>

@@ -3,10 +3,10 @@ import {motion} from 'framer-motion';
 import {Link} from 'react-router-dom';
 
 const prompts = [
-  {key: 'from_name', label: 'Your name:'},
-  {key: 'user_email', label: 'Your email:'},
-  {key: 'subject', label: 'Subject:'},
-  {key: 'message', label: 'Message:'}
+  {key: 'from_name', label: 'Name:'},
+  {key: 'user_email', label: 'Work email:'},
+  {key: 'subject', label: 'Project focus:'},
+  {key: 'message', label: 'Project details:'}
 ];
 
 const ContactHero = () => {
@@ -70,11 +70,11 @@ const ContactHero = () => {
     const trimmed = value.trim();
 
     if (!trimmed) {
-      return 'Input required to continue.';
+      return 'Input required.';
     }
 
     if (key === 'user_email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) {
-      return 'Enter a valid email address.';
+      return 'Enter a valid work email.';
     }
 
     return '';
@@ -177,7 +177,7 @@ const ContactHero = () => {
 
   const inputLineText = useMemo(() => {
     if (showSubmit) {
-      return `${promptPrefix}[Submit]`;
+      return `${promptPrefix}[Send Request]`;
     }
 
     return `${promptPrefix}${currentInput}`;
@@ -202,7 +202,7 @@ const ContactHero = () => {
       >
         <div className='w-full md:flex md:items-start md:justify-between'>
           <h1 className={`${lineTextClass} md:py-6 h-[4.25rem] md:h-[5rem] w-full md:flex-1 flex items-center justify-start`}>
-            {`${promptPrefix}Contact us`}
+            {`${promptPrefix}Discuss your project`}
           </h1>
           <div className='hidden md:flex md:py-6 flex-col items-end gap-1 text-right'>
             <a href={contactPhoneHref} className='md:text-xl lg:text-2xl'>
@@ -217,23 +217,23 @@ const ContactHero = () => {
         {showResultView ? (
           <>
             <p className={`${lineTextClass} w-full h-[4.5rem] md:h-[5rem] flex items-center`}>
-              {submitResult === 'success' ? `${promptPrefix}Success.` : `${promptPrefix}Error, please try again later.`}
+              {submitResult === 'success' ? `${promptPrefix}Request received.` : `${promptPrefix}Unable to send request.`}
             </p>
             {submitResult === 'success' && (
               <p className={`${lineTextClass} w-full h-[4.5rem] md:h-[5rem] flex items-center`}>
-                {`${promptPrefix}We will be in touch.`}
+                {`${promptPrefix}An engineer will follow up shortly.`}
               </p>
             )}
             <div className='w-full h-[4.5rem] md:h-[5rem] flex items-center'>
               {submitResult === 'success' ? (
-                <Link to='/' className={lineTextClass}>{`${promptPrefix}[Home]`}</Link>
+                <Link to='/' className={lineTextClass}>{`${promptPrefix}[Return Home]`}</Link>
               ) : (
                 <button
                   type='button'
                   onClick={() => window.location.reload()}
                   className={`${lineTextClass} bg-transparent border-0 p-0`}
                 >
-                  {`${promptPrefix}[Try again]`}
+                  {`${promptPrefix}[Retry]`}
                 </button>
               )}
             </div>
@@ -277,7 +277,7 @@ const ContactHero = () => {
 
             {isSubmitting && (
               <p className={`${lineTextClass} w-full pt-4`}>
-                {`${promptPrefix}Sending...`}
+                {`${promptPrefix}Sending request...`}
               </p>
             )}
 

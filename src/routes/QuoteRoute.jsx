@@ -10,10 +10,10 @@ const QuoteRoute = () => {
   return (
     <div> 
       <Helmet>
-              <title>Code Enclave LLC - Request a Quote</title>
-              <meta name="description" content="Request a quote from Code Enclave LLC for web development, branding, and SEO services." />
-              <meta property="og:title" content="Code Enclave LLC - Request a Quote" />
-              <meta property="og:description" content="Request a quote from Code Enclave LLC for web development, branding, and SEO services." />
+              <title>Start Your Project | Code Enclave LLC</title>
+              <meta name="description" content="Request project scoping for custom web development, software solutions, and business automation." />
+              <meta property="og:title" content="Start Your Project | Code Enclave LLC" />
+              <meta property="og:description" content="Share your requirements and get a practical build plan from Code Enclave LLC." />
               <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Helmet>
       <ScrollToTop />

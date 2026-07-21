@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const notFoundLines = [
-  '404: Page not found.',
-  'The page you requested does not exist.',
-  'Use the link below to return home.'
+  '404: Route not found.',
+  'This page is not available.',
+  'Return home to continue exploring.'
 ];
 
 const NotFound = () => {
@@ -18,8 +18,8 @@ const NotFound = () => {
   const [typedFollowup, setTypedFollowup] = useState('');
   const [followupCharIndex, setFollowupCharIndex] = useState(0);
   const promptPrefix = '> ';
-  const buttonText = 'HOME PAGE';
-  const followupText = 'Return to the site when you are ready.';
+  const buttonText = 'RETURN HOME';
+  const followupText = 'Need help? Start your project conversation.';
   const typingSpeed = 17;
   const lineTextClass = 'md:text-3xl sm:text-3xl text-xl';
 

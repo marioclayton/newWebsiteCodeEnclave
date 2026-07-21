@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import ContactUs from './components/ContactUs';
+import Industries from './components/Industries';
 import Portfolio from './components/portfolio';
 import Testimonials from './components/Testimonials';
 import ScrollToTop from "./scrollToTop.jsx";
@@ -15,12 +16,12 @@ function App() {
   return (
     <div> 
       <Helmet>
-        <title>Code Enclave LLC - Web Development Services</title>
-        <meta name="description" content="Code Enclave LLC provides professional web development services to help businesses succeed online. Offering custom websites and solutions tailored to your needs." />
-        <meta property="og:title" content="Code Enclave LLC - Web Development" />
+        <title>Code Enclave LLC | Custom Web Development and Software Engineering</title>
+        <meta name="description" content="Code Enclave LLC delivers custom web development, custom software development, and business automation for growing companies. High-performance small business websites and web applications, engineered in Florida." />
+        <meta property="og:title" content="Code Enclave LLC | Custom Web Development and Software Engineering" />
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:description" content="Your partner in web development. We create responsive, modern, and scalable websites for small and medium-sized businesses, using modern tech stacks, and cms tools such as wordpress." />
+        <meta property="og:description" content="Custom website development and software solutions built for performance, scalability, and long-term business growth." />
       </Helmet>
       <ScrollToTop />
       <Navbar />
@@ -30,6 +31,12 @@ function App() {
         <div className='relative z-10'>
           <Analytics />
           <Cards />
+        </div>
+      </section>
+      <section data-nav-theme='white' className='relative bg-black overflow-hidden'>
+        <div className='pointer-events-none absolute inset-0 z-0 white-fixed-section-shade' />
+        <div className='relative z-10'>
+          <Industries />
         </div>
       </section>
       <section data-nav-theme='cyan' className='relative bg-black overflow-hidden'>

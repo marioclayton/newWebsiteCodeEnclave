@@ -8,56 +8,56 @@ const Analytics = () => {
 
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-10'>
 
-        <h2 className='text-3xl md:text-4xl font-bold mb-8 pl-[2ch] -indent-[2ch] lg:col-span-2'>&gt; Solutions</h2>
+        <h2 className='text-3xl md:text-4xl font-bold mb-8 pl-[2ch] -indent-[2ch] lg:col-span-2'>&gt; Engineering Services</h2>
 
         <p className='text-xl md:text-2xl mb-12 leading-[2.1] pl-[2ch] -indent-[2ch] lg:col-span-2'>
-          &gt; At <strong>Code Enclave</strong>, we build high-performance websites and custom software that help businesses operate smarter, move faster, and stand apart. Every solution is designed with scalability, security, and long-term success in mind.
+          &gt; Code Enclave LLC is a boutique software engineering studio. We build custom systems that reduce friction, improve speed, and support long-term growth.
         </p>
 
-        <h3 className='text-2xl md:text-3xl font-semibold mb-8 pl-[2ch] -indent-[2ch] lg:col-span-2'>&gt; Our Capabilities</h3>
+        <h3 className='text-2xl md:text-3xl font-semibold mb-8 pl-[2ch] -indent-[2ch] lg:col-span-2'>&gt; What We Engineer</h3>
 
         <div className='flex flex-col gap-12 mb-16'>
           <div>
-            <p className='text-xl md:text-2xl font-semibold mb-2 pl-[2ch] -indent-[2ch]'>&gt; Web Development</p>
-            <p className='text-lg md:text-xl leading-[2.1] pl-[2ch] -indent-[2ch]'>&gt; Modern, responsive websites built for speed, performance, and conversion—crafted to represent your brand and grow your business.</p>
+            <p className='text-xl md:text-2xl font-semibold mb-2 pl-[2ch] -indent-[2ch]'>&gt; <Link to='/services/custom-web-development'>Custom Web Development</Link></p>
+            <p className='text-lg md:text-xl leading-[2.1] pl-[2ch] -indent-[2ch]'>&gt; Professional website design and website development for businesses that need speed, clarity, and measurable results.</p>
           </div>
           <div>
-            <p className='text-xl md:text-2xl font-semibold mb-2 pl-[2ch] -indent-[2ch]'>&gt; Custom Software</p>
-            <p className='text-lg md:text-xl leading-[2.1] pl-[2ch] -indent-[2ch]'>&gt; From internal business tools to full-scale web applications, we develop software tailored to your workflow and goals.</p>
+            <p className='text-xl md:text-2xl font-semibold mb-2 pl-[2ch] -indent-[2ch]'>&gt; <Link to='/services/custom-software-development'>Custom Software Development</Link></p>
+            <p className='text-lg md:text-xl leading-[2.1] pl-[2ch] -indent-[2ch]'>&gt; Software solutions built around your workflow, so your team can move faster with fewer manual steps.</p>
           </div>
           <div>
-            <p className='text-xl md:text-2xl font-semibold mb-2 pl-[2ch] -indent-[2ch]'>&gt; UI &amp; UX Design</p>
-            <p className='text-lg md:text-xl leading-[2.1] pl-[2ch] -indent-[2ch]'>&gt; Clean, intuitive interfaces that deliver exceptional user experiences across desktop, tablet, and mobile.</p>
+            <p className='text-xl md:text-2xl font-semibold mb-2 pl-[2ch] -indent-[2ch]'>&gt; <Link to='/services/custom-software-development'>Web Applications</Link></p>
+            <p className='text-lg md:text-xl leading-[2.1] pl-[2ch] -indent-[2ch]'>&gt; Secure, reliable web applications designed for daily operations, customer experience, and growth.</p>
           </div>
         </div>
 
         <div className='flex flex-col gap-12 mb-16'>
           <div>
-            <p className='text-xl md:text-2xl font-semibold mb-2 pl-[2ch] -indent-[2ch]'>&gt; Scalable Backend Systems</p>
-            <p className='text-lg md:text-xl leading-[2.1] pl-[2ch] -indent-[2ch]'>&gt; Secure APIs, databases, and server architecture engineered for reliability, performance, and future growth.</p>
+            <p className='text-xl md:text-2xl font-semibold mb-2 pl-[2ch] -indent-[2ch]'>&gt; <Link to='/services/business-automation'>Business Automation</Link></p>
+            <p className='text-lg md:text-xl leading-[2.1] pl-[2ch] -indent-[2ch]'>&gt; We automate repetitive work across operations, sales, and service so your team can focus on higher-value work.</p>
           </div>
           <div>
-            <p className='text-xl md:text-2xl font-semibold mb-2 pl-[2ch] -indent-[2ch]'>&gt; SEO &amp; Performance Optimization</p>
-            <p className='text-lg md:text-xl leading-[2.1] pl-[2ch] -indent-[2ch]'>&gt; Fast-loading, search-optimized websites that improve visibility and help customers find your business.</p>
+            <p className='text-xl md:text-2xl font-semibold mb-2 pl-[2ch] -indent-[2ch]'>&gt; <Link to='/services/seo-performance'>SEO &amp; Performance Optimization</Link></p>
+            <p className='text-lg md:text-xl leading-[2.1] pl-[2ch] -indent-[2ch]'>&gt; Faster load times, stronger search visibility, and smoother user flows that convert attention into revenue.</p>
           </div>
           <div>
-            <p className='text-xl md:text-2xl font-semibold mb-2 pl-[2ch] -indent-[2ch]'>&gt; Support &amp; Evolution</p>
-            <p className='text-lg md:text-xl leading-[2.1] pl-[2ch] -indent-[2ch]'>&gt; Technology should evolve with your business. We provide ongoing maintenance, enhancements, and long-term technical support.</p>
+            <p className='text-xl md:text-2xl font-semibold mb-2 pl-[2ch] -indent-[2ch]'>&gt; <Link to='/services/website-maintenance'>Digital Infrastructure</Link></p>
+            <p className='text-lg md:text-xl leading-[2.1] pl-[2ch] -indent-[2ch]'>&gt; Stable architecture, dependable deployments, and maintainable systems that scale with your business.</p>
           </div>
         </div>
 
-        <div className='border-t-4 border-amber-400 mb-12 lg:col-span-2' />
+        <div className='border-t border-amber-400 mb-12 lg:col-span-2' />
 
         <h3 className='text-2xl md:text-3xl font-semibold mb-6 pl-[2ch] -indent-[2ch] lg:col-span-2'>&gt; Build Beyond the Template.</h3>
         <p className='text-lg md:text-xl leading-[2.1] mb-12 pl-[2ch] -indent-[2ch] lg:col-span-2'>
-          &gt; Whether you need a professional website, a custom web application, or software built around your business, we create digital solutions that are engineered to perform—and built to last.
+          &gt; From small business websites to custom software development, we engineer systems that perform now and scale later. Additional service tracks like website maintenance, SEO optimization, WordPress development, React development, and e-commerce development are available as your roadmap expands.
         </p>
 
         <Link
-          to='/ContactUs'
+          to='/Quote'
           className='inline-block text-3xl md:text-4xl font-bold no-underline lg:col-span-2'
         >
-          &gt; [Contact Us]
+          &gt; [Let's Build Something Exceptional]
         </Link>
       </div>
       </div>

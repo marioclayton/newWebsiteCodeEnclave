@@ -166,3 +166,64 @@ body {
   background-position: center top;
   background-attachment: fixed;
 }
+
+/* Preview mode: remove bold text globally while preserving hero and navbar styling. */
+body :where(h1, h2, h3, h4, h5, h6, strong, b, .font-semibold, .font-bold, .font-extrabold, .font-black) {
+  font-weight: 400 !important;
+}
+
+/* Keep hero sections unchanged. */
+.overlay-container :where(h1, h2, h3, h4, h5, h6, strong, b) {
+  font-weight: 700 !important;
+}
+
+.overlay-container .font-semibold {
+  font-weight: 600 !important;
+}
+
+.overlay-container .font-bold {
+  font-weight: 700 !important;
+}
+
+.overlay-container .font-extrabold {
+  font-weight: 800 !important;
+}
+
+.overlay-container .font-black {
+  font-weight: 900 !important;
+}
+
+/* Keep navbar styling unchanged. */
+.z-50 :where(h1, h2, h3, h4, h5, h6, strong, b) {
+  font-weight: 700 !important;
+}
+
+.z-50 .font-semibold {
+  font-weight: 600 !important;
+}
+
+.z-50 .font-bold {
+  font-weight: 700 !important;
+}
+
+.z-50 .font-extrabold {
+  font-weight: 800 !important;
+}
+
+.z-50 .font-black {
+  font-weight: 900 !important;
+}
+
+.white-fixed-section-shade {
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.07) 26%,
+    rgba(255, 255, 255, 0.03) 44%,
+    rgba(0, 0, 0, 0) 74%
+  );
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  background-position: center top;
+  background-attachment: fixed;
+}

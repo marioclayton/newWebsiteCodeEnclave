@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Quote = () => {
 
-  const [formData, setFormData] = useState({ from_name: '', company: '', email: '', phone: '', subject: 'Quote', message: '' });
+  const [formData, setFormData] = useState({ from_name: '', company: '', email: '', phone: '', subject: 'WebsiteDevelopment', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -58,12 +58,12 @@ const Quote = () => {
   return (
     <section className='w-full bg-transparent py-[9rem] sm:py-[11rem] lg:py-[13rem]'>
       <div className='w-full max-w-[1240px] mx-auto px-4 retro-display-amber'>
-        <h2 className='mb-4 text-3xl sm:text-4xl tracking-tight font-extrabold text-left pl-[2ch] -indent-[2ch]'>&gt; Get a Quote</h2>
-        <p className='mb-12 text-base sm:text-xl text-amber-100/90 leading-relaxed text-left pl-[2ch] -indent-[2ch]'>&gt; Looking for a custom website designed just for your business? Let us help you turn your ideas into a digital reality. Select the best fit or request a custom quote and we will reply with a detailed estimate.</p>
+        <h2 className='mb-4 text-3xl sm:text-4xl tracking-tight font-extrabold text-left pl-[2ch] -indent-[2ch]'>&gt; Start Your Project</h2>
+        <p className='mb-12 text-base sm:text-xl text-amber-100/90 leading-relaxed text-left pl-[2ch] -indent-[2ch]'>&gt; Tell us what you are building. We will scope the right path for custom web development, custom software development, business automation, or web applications.</p>
 
         <form onSubmit={handleSubmit} className='space-y-8 mb-14 border-2 border-amber-300/90 rounded-md bg-black/45 px-5 py-8'>
           <div>
-            <label htmlFor='name' className='block mb-2 text-sm sm:text-base font-medium text-amber-100/90 pl-[2ch] -indent-[2ch]'>&gt; Your name</label>
+            <label htmlFor='name' className='block mb-2 text-sm sm:text-base font-medium text-amber-100/90 pl-[2ch] -indent-[2ch]'>&gt; Name</label>
             <input
               value={formData.from_name}
               onChange={handleInputChange}
@@ -71,13 +71,13 @@ const Quote = () => {
               type='text'
               id='name'
               className='block w-full px-4 py-3 border-2 border-amber-300/90 rounded-md bg-black/40 text-amber-100 placeholder-amber-200/50 focus:outline-none'
-              placeholder='First Last'
+              placeholder='Jane Smith'
               required
             ></input>
           </div>
 
           <div>
-            <label htmlFor='companyName' className='block mb-2 text-sm sm:text-base font-medium text-amber-100/90 pl-[2ch] -indent-[2ch]'>&gt; Company name</label>
+            <label htmlFor='companyName' className='block mb-2 text-sm sm:text-base font-medium text-amber-100/90 pl-[2ch] -indent-[2ch]'>&gt; Company</label>
             <input
               value={formData.company}
               onChange={handleInputChange}
@@ -85,13 +85,13 @@ const Quote = () => {
               type='text'
               id='companyName'
               className='block w-full px-4 py-3 border-2 border-amber-300/90 rounded-md bg-black/40 text-amber-100 placeholder-amber-200/50 focus:outline-none'
-              placeholder='XYZ LLC'
+              placeholder='Acme Services LLC'
               required
             ></input>
           </div>
 
           <div>
-            <label htmlFor='email' className='block mb-2 text-sm sm:text-base font-medium text-amber-100/90 pl-[2ch] -indent-[2ch]'>&gt; Your email</label>
+            <label htmlFor='email' className='block mb-2 text-sm sm:text-base font-medium text-amber-100/90 pl-[2ch] -indent-[2ch]'>&gt; Work email</label>
             <input
               value={formData.email}
               onChange={handleInputChange}
@@ -105,7 +105,7 @@ const Quote = () => {
           </div>
 
           <div>
-            <label htmlFor='phone' className='block mb-2 text-sm sm:text-base font-medium text-amber-100/90 pl-[2ch] -indent-[2ch]'>&gt; Your phone number</label>
+            <label htmlFor='phone' className='block mb-2 text-sm sm:text-base font-medium text-amber-100/90 pl-[2ch] -indent-[2ch]'>&gt; Phone</label>
             <input
               value={formData.phone}
               onChange={handleInputChange}
@@ -114,13 +114,13 @@ const Quote = () => {
               type='tel'
               id='phone'
               className='block w-full px-4 py-3 border-2 border-amber-300/90 rounded-md bg-black/40 text-amber-100 placeholder-amber-200/50 focus:outline-none'
-              placeholder='1231231234'
+              placeholder='3053220401'
               required
             ></input>
           </div>
 
           <div>
-            <label htmlFor='subject' className='block mb-2 text-sm sm:text-base font-medium text-amber-100/90 pl-[2ch] -indent-[2ch]'>&gt; Subject</label>
+            <label htmlFor='subject' className='block mb-2 text-sm sm:text-base font-medium text-amber-100/90 pl-[2ch] -indent-[2ch]'>&gt; Engagement type</label>
             <select
               value={formData.subject}
               onChange={handleInputChange}
@@ -129,15 +129,15 @@ const Quote = () => {
               className='block w-full px-4 py-3 border-2 border-amber-300/90 rounded-md bg-black/40 text-amber-100 focus:outline-none'
               required
             >
-              <option value='Support'>Support</option>
-              <option value='BasicPackage'>Basic Package</option>
-              <option value='PremiumPackage'>Premium Package</option>
-              <option value='CustomQuote'>Get a Custom Quote</option>
+              <option value='TechnicalSupport'>Technical Support</option>
+              <option value='WebsiteDevelopment'>Website Development</option>
+              <option value='CustomSoftwareDevelopment'>Custom Software Development</option>
+              <option value='BusinessAutomation'>Business Automation</option>
             </select>
           </div>
 
           <div className='sm:col-span-2'>
-            <label htmlFor='message' className='block mb-2 text-sm sm:text-base font-medium text-amber-100/90 pl-[2ch] -indent-[2ch]'>&gt; Your message</label>
+            <label htmlFor='message' className='block mb-2 text-sm sm:text-base font-medium text-amber-100/90 pl-[2ch] -indent-[2ch]'>&gt; Project details</label>
             <textarea
               value={formData.message}
               onChange={handleInputChange}
@@ -145,13 +145,13 @@ const Quote = () => {
               id='message'
               rows='6'
               className='block w-full px-4 py-3 border-2 border-amber-300/90 rounded-md bg-black/40 text-amber-100 placeholder-amber-200/50 focus:outline-none'
-              placeholder='Leave a comment...'
+              placeholder='Timeline, scope, and required outcomes'
             ></textarea>
           </div>
 
           <div className='w-full flex justify-start pl-[2ch]'>
             <button disabled={isSubmitting} type='submit' value='Send' className='text-amber-100 text-xl sm:text-2xl font-bold'>
-              &gt; [Request Quote]
+              &gt; [Engineer Your Next Solution]
             </button>
           </div>
         </form>
@@ -181,14 +181,14 @@ const Quote = () => {
         </div>
       )}
 
-      <h2 className='mb-4 text-xl sm:text-2xl tracking-tight font-extrabold text-left pl-[2ch] -indent-[2ch]'>&gt; Call Us</h2>
+      <h2 className='mb-4 text-xl sm:text-2xl tracking-tight font-extrabold text-left pl-[2ch] -indent-[2ch]'>&gt; Prefer a quick call?</h2>
       <div className='flex items-center flex-wrap gap-3 mb-10 pl-[2ch] -indent-[2ch]'> 
-        <p className='font-light text-amber-100/90 sm:text-xl'>&gt; You can reach us at <a href='tel:+13053220401' className='font-light sm:text-xl'>305-322-0401</a></p>
+        <p className='font-light text-amber-100/90 sm:text-xl'>&gt; Reach us at <a href='tel:+13053220401' className='font-light sm:text-xl'>305-322-0401</a></p>
         <FaPhone className='text-amber-100 sm:text-xl'/>
       </div>
-      <h2 className='mb-4 text-xl sm:text-2xl tracking-tight font-extrabold text-left pl-[2ch] -indent-[2ch]'>&gt; Email Us</h2>
+      <h2 className='mb-4 text-xl sm:text-2xl tracking-tight font-extrabold text-left pl-[2ch] -indent-[2ch]'>&gt; Or send an email</h2>
       <div className='flex items-center flex-wrap gap-3 pl-[2ch] -indent-[2ch]'> 
-        <p className='font-light text-amber-100/90 sm:text-xl'>&gt; Email us at <a href='mailto:support@codeenclave.com' className='font-light sm:text-xl'>support@codeenclave.com</a></p>
+        <p className='font-light text-amber-100/90 sm:text-xl'>&gt; Write to <a href='mailto:support@codeenclave.com' className='font-light sm:text-xl'>support@codeenclave.com</a></p>
         <MdEmail className='text-amber-100 sm:text-xl'/>
       </div>
 

@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const requestLines = [
-  'We have received your request!',
-  'We will be in contact with you shortly.',
-  'Please check your email and phone for a response.'
+  'Request received.',
+  'Thank you for contacting Code Enclave LLC.',
+  'An engineer will follow up shortly by email or phone.'
 ];
 
 const RequestReceived = () => {
@@ -18,8 +18,8 @@ const RequestReceived = () => {
   const [typedFollowup, setTypedFollowup] = useState('');
   const [followupCharIndex, setFollowupCharIndex] = useState(0);
   const promptPrefix = '> ';
-  const buttonText = 'HOME PAGE';
-  const followupText = 'Return to the site when you are ready.';
+  const buttonText = 'RETURN HOME';
+  const followupText = 'We appreciate the opportunity to build with you.';
   const typingSpeed = 17;
   const lineTextClass = 'md:text-3xl sm:text-3xl text-xl';
 

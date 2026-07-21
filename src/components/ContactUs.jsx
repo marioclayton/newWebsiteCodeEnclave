@@ -63,12 +63,12 @@ const ContactUs = () => {
   return (
     <section className='w-full bg-transparent py-[9rem] sm:py-[11rem] lg:py-[13rem]'>
       <div className='w-full max-w-[1240px] mx-auto px-4 retro-display-cyan'>
-        <h2 className='mb-4 text-3xl sm:text-4xl tracking-tight font-extrabold text-left pl-[2ch] -indent-[2ch]'>&gt; Contact Us</h2>
-        <p className='mb-12 text-base sm:text-xl text-cyan-100/90 leading-relaxed text-left pl-[2ch] -indent-[2ch]'>&gt; Got a technical issue? Want to send feedback about a beta feature? Need details about our business plan? Let us know.</p>
+        <h2 className='mb-4 text-3xl sm:text-4xl tracking-tight font-extrabold text-left pl-[2ch] -indent-[2ch]'>&gt; Discuss Your Project</h2>
+        <p className='mb-12 text-base sm:text-xl text-cyan-100/90 leading-relaxed text-left pl-[2ch] -indent-[2ch]'>&gt; Planning custom web development, business automation, or custom software development? Share your goals and we will outline a practical path forward.</p>
 
         <form onSubmit={handleSubmit} className='space-y-8 mb-14 border-2 border-cyan-300/90 rounded-md bg-black/45 px-5 py-8'>
           <div>
-            <label htmlFor='from_name' className='block mb-2 text-sm sm:text-base font-medium text-cyan-100/90 pl-[2ch] -indent-[2ch]'>&gt; Your name</label>
+            <label htmlFor='from_name' className='block mb-2 text-sm sm:text-base font-medium text-cyan-100/90 pl-[2ch] -indent-[2ch]'>&gt; Name</label>
             <input
               value={formData.from_name}
               onChange={handleInputChange}
@@ -76,13 +76,13 @@ const ContactUs = () => {
               type='text'
               id='from_name'
               className='block w-full px-4 py-3 border-2 border-cyan-300/90 rounded-md bg-black/40 text-cyan-100 placeholder-cyan-200/50 focus:outline-none'
-              placeholder='John Doe'
+              placeholder='Jane Smith'
               required
             />
           </div>
 
           <div>
-            <label htmlFor='email' className='block mb-2 text-sm sm:text-base font-medium text-cyan-100/90 pl-[2ch] -indent-[2ch]'>&gt; Your email</label>
+            <label htmlFor='email' className='block mb-2 text-sm sm:text-base font-medium text-cyan-100/90 pl-[2ch] -indent-[2ch]'>&gt; Work email</label>
             <input
               name='user_email'
               type='email'
@@ -96,13 +96,13 @@ const ContactUs = () => {
           </div>
 
           <div>
-            <label htmlFor='subject' className='block mb-2 text-sm sm:text-base font-medium text-cyan-100/90 pl-[2ch] -indent-[2ch]'>&gt; Subject</label>
+            <label htmlFor='subject' className='block mb-2 text-sm sm:text-base font-medium text-cyan-100/90 pl-[2ch] -indent-[2ch]'>&gt; Project focus</label>
             <input
               name='subject'
               type='text'
               id='subject'
               className='block w-full px-4 py-3 border-2 border-cyan-300/90 rounded-md bg-black/40 text-cyan-100 placeholder-cyan-200/50 focus:outline-none'
-              placeholder='Let us know how we can help you'
+              placeholder='Custom web development, automation, or software'
               required
               value={formData.subject}
               onChange={handleInputChange}
@@ -110,13 +110,13 @@ const ContactUs = () => {
           </div>
 
           <div className='sm:col-span-2'>
-            <label htmlFor='message' className='block mb-2 text-sm sm:text-base font-medium text-cyan-100/90 pl-[2ch] -indent-[2ch]'>&gt; Your message</label>
+            <label htmlFor='message' className='block mb-2 text-sm sm:text-base font-medium text-cyan-100/90 pl-[2ch] -indent-[2ch]'>&gt; Project details</label>
             <textarea
               name='message'
               id='message'
               rows='6'
               className='block w-full px-4 py-3 border-2 border-cyan-300/90 rounded-md bg-black/40 text-cyan-100 placeholder-cyan-200/50 focus:outline-none'
-              placeholder='Leave a comment...'
+              placeholder='Timeline, priorities, and what success looks like'
               value={formData.message}
               onChange={handleInputChange}
             ></textarea>
@@ -124,7 +124,7 @@ const ContactUs = () => {
 
           <div className='w-full flex justify-start pl-[2ch]'>
             <button disabled={isSubmitting} type='submit' value='Send' className='text-cyan-100 text-xl sm:text-2xl font-bold'>
-              &gt; [Send Message]
+              &gt; [Start Your Project]
             </button>
           </div>
         </form>
@@ -154,14 +154,14 @@ const ContactUs = () => {
         </div>
       )}
 
-      <h2 className='mb-4 text-xl sm:text-2xl tracking-tight font-extrabold text-left pl-[2ch] -indent-[2ch]'>&gt; Call Us</h2>
+      <h2 className='mb-4 text-xl sm:text-2xl tracking-tight font-extrabold text-left pl-[2ch] -indent-[2ch]'>&gt; Prefer a quick call?</h2>
       <div className='flex items-center flex-wrap gap-3 mb-10 pl-[2ch] -indent-[2ch]'> 
-        <p className='font-light text-cyan-100/90 sm:text-xl'>&gt; You can reach us at <a href='tel:+13053220401' className='font-light sm:text-xl'>305-322-0401</a></p>
+        <p className='font-light text-cyan-100/90 sm:text-xl'>&gt; Reach us at <a href='tel:+13053220401' className='font-light sm:text-xl'>305-322-0401</a></p>
         <FaPhone className='text-cyan-100 sm:text-xl'/>
       </div>
-      <h2 className='mb-4 text-xl sm:text-2xl tracking-tight font-extrabold text-left pl-[2ch] -indent-[2ch]'>&gt; Email Us</h2>
+      <h2 className='mb-4 text-xl sm:text-2xl tracking-tight font-extrabold text-left pl-[2ch] -indent-[2ch]'>&gt; Or send an email</h2>
       <div className='flex items-center flex-wrap gap-3 pl-[2ch] -indent-[2ch]'> 
-        <p className='font-light text-cyan-100/90 sm:text-xl'>&gt; Email us at <a href='mailto:support@codeenclave.com' className='font-light sm:text-xl'>support@codeenclave.com</a></p>
+        <p className='font-light text-cyan-100/90 sm:text-xl'>&gt; Write to <a href='mailto:support@codeenclave.com' className='font-light sm:text-xl'>support@codeenclave.com</a></p>
         <MdEmail className='text-cyan-100 sm:text-xl'/>
       </div>
 

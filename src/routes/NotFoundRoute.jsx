@@ -14,9 +14,9 @@ const NotFoundRoute = () => {
     <div> 
       <Helmet>
               <title>Code Enclave LLC - Not Found</title>
-              <meta name="description" content="Not Found." />
+              <meta name="description" content="The requested page could not be found." />
               <meta property="og:title" content="Code Enclave LLC - Not Found" />
-              <meta property="og:description" content="Not Found." />
+              <meta property="og:description" content="The requested page could not be found." />
               <meta name="robots" content="noindex, follow" />
               <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Helmet>

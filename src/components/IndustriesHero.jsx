@@ -2,14 +2,14 @@ import React, {useEffect, useState} from 'react';
 import {motion} from 'framer-motion';
 import {Link} from 'react-router-dom';
 
-const heroLines = [
-  'CODE ENCLAVE LLC',
-  'Custom Web and Software Engineering',
-  '> Built for performance, scale, and business growth.'
+const industryLines = [
+  'Industries',
+  '> Sector-specific systems built for real operations',
+  '> Contractors, healthcare, real estate, and local businesses'
 ];
 
-const Hero = () => {
-  const [typedLines, setTypedLines] = useState(() => Array(heroLines.length).fill(''));
+const IndustriesHero = () => {
+  const [typedLines, setTypedLines] = useState(() => Array(industryLines.length).fill(''));
   const [lineIndex, setLineIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [showButton, setShowButton] = useState(false);
@@ -17,80 +17,21 @@ const Hero = () => {
   const [buttonCharIndex, setButtonCharIndex] = useState(0);
   const [typedScrollHint, setTypedScrollHint] = useState('');
   const [scrollHintCharIndex, setScrollHintCharIndex] = useState(0);
-  const [isStaticHero, setIsStaticHero] = useState(false);
   const promptPrefix = '> ';
-  const buttonText = 'Engineer Your Next Solution';
-  const scrollHintText = 'Scroll to explore';
+  const buttonText = 'Start Your Project';
+  const scrollHintText = 'Scroll to explore industries';
   const typingSpeed = 17;
   const lineTextClass = 'md:text-4xl sm:text-3xl text-2xl';
 
   useEffect(() => {
-    const updateStaticHeroPreference = () => {
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const useStaticHero = prefersReducedMotion;
-
-      setIsStaticHero(useStaticHero);
-
-      if (useStaticHero) {
-        setTypedLines(heroLines);
-        setLineIndex(heroLines.length);
-        setCharIndex(0);
-        setShowButton(true);
-        setTypedButton(buttonText);
-        setButtonCharIndex(buttonText.length + 1);
-        setTypedScrollHint(scrollHintText);
-        setScrollHintCharIndex(scrollHintText.length + 1);
-      }
-    };
-
-    updateStaticHeroPreference();
-    window.addEventListener('resize', updateStaticHeroPreference);
-
-    return () => {
-      window.removeEventListener('resize', updateStaticHeroPreference);
-    };
-  }, []);
-
-  const renderTypedLine = (line, index) => {
-    const isActiveLine = !showButton && lineIndex === index;
-    const hasLineStarted = index < lineIndex || isActiveLine || line.length > 0;
-    const safeLine = line || '\u00A0';
-
-    return (
-      <>
-        {hasLineStarted ? promptPrefix : '\u00A0\u00A0'}
-        {safeLine}
-        {!isStaticHero && isActiveLine && (
-          <motion.span
-            animate={{opacity: [1, 1, 0, 0, 1, 1]}}
-            transition={{
-              duration: 1.04,
-              repeat: Infinity,
-              ease: 'linear',
-              times: [0, 0.44, 0.45, 0.9, 0.91, 1]
-            }}
-            className='font-black text-[1.05em]'
-          >
-            _
-          </motion.span>
-        )}
-      </>
-    );
-  };
-
-  useEffect(() => {
-    if (isStaticHero) {
-      return;
-    }
-
-    if (lineIndex >= heroLines.length) {
+    if (lineIndex >= industryLines.length) {
       if (!showButton) {
         setShowButton(true);
       }
       return;
     }
 
-    const activeLine = heroLines[lineIndex];
+    const activeLine = industryLines[lineIndex];
 
     if (charIndex <= activeLine.length) {
       const typeTimer = setTimeout(() => {
@@ -111,13 +52,9 @@ const Hero = () => {
     }, 110);
 
     return () => clearTimeout(nextLineTimer);
-  }, [charIndex, lineIndex, showButton, isStaticHero]);
+  }, [charIndex, lineIndex, showButton]);
 
   useEffect(() => {
-    if (isStaticHero) {
-      return;
-    }
-
     if (!showButton) {
       return;
     }
@@ -132,15 +69,11 @@ const Hero = () => {
     }, typingSpeed);
 
     return () => clearTimeout(buttonTypeTimer);
-  }, [showButton, buttonCharIndex, isStaticHero]);
+  }, [showButton, buttonCharIndex, typingSpeed]);
 
   const isButtonTypingComplete = typedButton.length >= buttonText.length;
 
   useEffect(() => {
-    if (isStaticHero) {
-      return;
-    }
-
     if (!isButtonTypingComplete) {
       return;
     }
@@ -155,35 +88,55 @@ const Hero = () => {
     }, typingSpeed);
 
     return () => clearTimeout(scrollHintTypeTimer);
-  }, [isButtonTypingComplete, scrollHintCharIndex, isStaticHero]);
+  }, [isButtonTypingComplete, scrollHintCharIndex, typingSpeed]);
+
+  const renderTypedLine = (line, index) => {
+    const isActiveLine = lineIndex === index && lineIndex < industryLines.length;
+    const hasLineStarted = index < lineIndex || isActiveLine || line.length > 0;
+    const safeLine = line || '\u00A0';
+
+    return (
+      <>
+        {hasLineStarted ? promptPrefix : '\u00A0\u00A0'}
+        {safeLine}
+        {isActiveLine && (
+          <motion.span
+            animate={{opacity: [1, 1, 0, 0, 1, 1]}}
+            transition={{
+              duration: 1.04,
+              repeat: Infinity,
+              ease: 'linear',
+              times: [0, 0.44, 0.45, 0.9, 0.91, 1]
+            }}
+            className='font-black text-[1.05em]'
+          >
+            _
+          </motion.span>
+        )}
+      </>
+    );
+  };
 
   const isScrollHintTypingComplete = typedScrollHint.length >= scrollHintText.length;
   const showFinalPrompt = showButton && isButtonTypingComplete && isScrollHintTypingComplete;
 
   return (
-
-    
-
-
     <div className='overlay-container mt-[-96px] pt-[96px]'>
       <div className='w-full max-w-[1240px] h-screen mx-auto px-4 text-left flex flex-col justify-center items-start overlay-content retro-display'>
-        
-        <h1 className={`${lineTextClass} md:py-6 min-h-[3.25rem] md:min-h-[4rem] w-full flex items-center justify-start`}>
+        <h1 className={`${lineTextClass} md:py-6 h-[4.25rem] md:h-[5rem] w-full flex items-center justify-start`}>
           {renderTypedLine(typedLines[0], 0)}
         </h1>
-        <div className='w-full flex justify-start items-center min-h-[3rem] md:min-h-[3.75rem]'>
-          <p className={`${lineTextClass} py-4`}>
+        <p className={`${lineTextClass} py-4 h-[8rem] sm:h-[7rem] md:h-[6rem] w-full pl-[2ch] -indent-[2ch]`}>
           {renderTypedLine(typedLines[1], 1)}
-          </p>
-        </div>
-        <p className={`${lineTextClass} w-full tracking-tight py-10 h-[12rem] sm:h-[11rem] md:h-[10rem] lg:h-[9rem] pl-[2ch] -indent-[2ch]`}>
+        </p>
+        <p className={`${lineTextClass} py-4 h-[12rem] sm:h-[11rem] md:h-[10rem] lg:h-[9rem] w-full pl-[2ch] -indent-[2ch]`}>
           {renderTypedLine(typedLines[2], 2)}
         </p>
         <div className='w-full min-h-[5rem] flex items-center'>
           <button
             className={`${lineTextClass} font-medium my-6 py-1 self-start bg-transparent border-0 ${showButton ? '' : 'invisible pointer-events-none'}`}
           >
-            <Link to='/services'>
+            <Link to='/Quote'>
               <span>{promptPrefix}</span>
               <span>[{typedButton || '\u00A0'}]</span>
             </Link>
@@ -194,7 +147,7 @@ const Hero = () => {
         </p>
         <p className='w-full min-h-[2rem] font-black text-[2rem] leading-none'>
           {showFinalPrompt ? promptPrefix : '\u00A0\u00A0'}
-          {showFinalPrompt && !isStaticHero ? (
+          {showFinalPrompt ? (
             <motion.span
               animate={{opacity: [1, 1, 0, 0, 1, 1]}}
               transition={{
@@ -206,8 +159,6 @@ const Hero = () => {
             >
               _
             </motion.span>
-          ) : showFinalPrompt ? (
-            <span>_</span>
           ) : (
             <span>{'\u00A0'}</span>
           )}
@@ -217,4 +168,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default IndustriesHero;

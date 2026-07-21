@@ -3,9 +3,9 @@ import {motion} from 'framer-motion';
 import {Link} from 'react-router-dom';
 
 const portfolioLines = [
-  'Selected Projects',
-  '> Where Vision Meets Code',
-  '> A collection of digital experiences engineered for performance'
+  'Selected Work',
+  '> Custom web and software projects in production',
+  '> Built for reliability, speed, and measurable business impact'
 ];
 
 const PortfolioHero = () => {
@@ -18,8 +18,8 @@ const PortfolioHero = () => {
   const [typedScrollHint, setTypedScrollHint] = useState('');
   const [scrollHintCharIndex, setScrollHintCharIndex] = useState(0);
   const promptPrefix = '> ';
-  const buttonText = 'Get started';
-  const scrollHintText = 'Scroll down for more';
+  const buttonText = 'Start Your Project';
+  const scrollHintText = 'Scroll to view projects';
   const typingSpeed = 17;
   const lineTextClass = 'md:text-4xl sm:text-3xl text-2xl';
 

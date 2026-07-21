@@ -9,10 +9,10 @@ const BrandingRoute = () => {
   return (
     <div>
       <Helmet>
-              <title>Code Enclave LLC - Branding Services</title>
-              <meta name="description" content="Code Enclave LLC provides professional branding services to help businesses succeed online." />
-              <meta property="og:title" content="Code Enclave LLC - Branding" />
-              <meta property="og:description" content="Code Enclave LLC provides professional branding services to help businesses succeed online." />
+              <title>Brand Systems Insights | Code Enclave LLC</title>
+              <meta name="description" content="Explore how clear brand systems support trust, conversion, and stronger positioning across digital channels." />
+              <meta property="og:title" content="Brand Systems Insights | Code Enclave LLC" />
+              <meta property="og:description" content="Brand guidance built for companies scaling their digital presence." />
               <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Helmet>
         <ScrollToTop />

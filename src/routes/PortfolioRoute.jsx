@@ -14,9 +14,9 @@ const PortfolioRoute = () => {
     <div> 
       <Helmet>
               <title>Code Enclave LLC - Our Work</title>
-              <meta name="description" content="Code Enclave LLC has helped small and medium-sized businesses grow their presence online. Check out our work." />
+              <meta name="description" content="See selected custom website development and software solutions delivered for growing businesses." />
               <meta property="og:title" content="Code Enclave LLC - Our Work" />
-              <meta property="og:description" content="Code Enclave LLC has helped small and medium-sized businesses grow their presence online. Check out our work." />
+              <meta property="og:description" content="Portfolio of performance-focused web applications and small business websites." />
               <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Helmet>
       <ScrollToTop />

@@ -9,98 +9,116 @@ const Privacy = () => {
         <motion.div initial={{y:200, opacity:0}} whileInView={{ y: 0, opacity:1 }} transition={{duration:0.8, delay:0.2}} className='py-16 px-4 flex flex-col justify-center'>
           <h1 className='md:text-3xl sm:text-2xl text-3xl  py-2'>Privacy Policy</h1>
           <p className='py-2'>
-            At Code Enclave LLC, we respect your privacy and are committed to protecting the personal information you share with us. This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website or engage with our services. By using our website, you consent to the data practices described in this policy.
+            Code Enclave LLC is committed to protecting your privacy. This policy explains what information we collect, how we use it, and how we safeguard it when you use our website and services.
           </p>
           <h3 className='text-2xl sm:text-xl pt-2'>
             Information We Collect 
           </h3>
           <p className='py-4'>
-            We may collect the following types of personal information when you visit our website or engage with our services:
+            We may collect the following information when you submit forms or interact with our website:
           </p>
           <p className='pl-6 pb-4'>
-            Personal Identification Information: This may include your name, email address, phone number, or other contact details that you provide when filling out forms, subscribing to our newsletter, or contacting us directly.
+            Contact Information: Name, email, phone number, and other details you provide through forms.
           </p>
           <p className='pl-6 pb-4'>
-            Website Usage Data: We may collect non-personal information regarding your interaction with our website, such as IP address, browser type, operating system, pages visited, and time spent on the site. This information helps us analyze trends, administer the website, and improve user experience.  
+            Usage Data: Browser, device, pages viewed, session behavior, and similar analytics data used to improve performance and user experience.
+          </p>
+          <p className='pl-6 pb-4'>
+            Inquiry Data: Project details, company information, and service interests submitted through our contact and quote forms.
           </p>
           <h3 className='text-2xl sm:text-xl pt-2'>
             How We Use Your Information
           </h3>
           <p className='py-4'>
-            We may use your personal information in the following ways:
+            We may use your information to:
           </p>
           <p className='pl-6 pb-4'>
-            To respond to your inquiries, provide customer support, and improve our services.
+            Respond to inquiries and project requests.
           </p>
           <p className='pl-6 pb-4'>
-            To send you promotional emails, updates, or other communications if you have opted in to receive such content.
+            Provide support and service updates.
           </p>
           <p className='pl-6 pb-4'>
-            To improve the functionality of our website, including optimizing the user experience.
+            Improve website functionality and performance.
           </p>
           <p className='pl-6 pb-4'>
-            To comply with legal obligations or enforce our website’s terms and conditions.
+            Meet legal and regulatory obligations.
           </p>
           <h3 className='text-2xl sm:text-xl pt-2'>
             Sharing Your Information
           </h3>
           <p className='py-4'>
-            We do not sell, rent, or lease your personal information to third parties. However, we may share your information with trusted third-party service providers to perform functions on our behalf, such as hosting services, email delivery, or analytics. These providers are required to use your information solely for the purpose of providing services to us and must keep it confidential.
+            We do not sell personal information. We may share data with trusted providers that support hosting, analytics, and communications. Those providers are required to protect your data.
           </p>
           <p className='py-4'>
-            We may also disclose personal information if required by law or in response to legal processes, such as subpoenas, court orders, or government requests.
+            Form submissions are processed through our server-side contact and quote handlers to deliver inquiry details to our team email inbox.
+          </p>
+          <p className='py-4'>
+            We may disclose information when required by law or legal process.
           </p>
           <h3 className='text-2xl sm:text-xl pt-2'>
             Data Security
           </h3>
           <p className='py-4'>
-            We take reasonable steps to protect your personal information from unauthorized access, alteration, disclosure, or destruction. While we strive to use commercially acceptable means to protect your data, please remember that no method of transmission over the internet or electronic storage is completely secure, and we cannot guarantee the absolute security of your information.
+            We use reasonable technical and operational safeguards to protect your data. No internet transmission method is fully risk-free, so absolute security cannot be guaranteed.
+          </p>
+          <h3 className='text-2xl sm:text-xl pt-2'>
+            Data Retention
+          </h3>
+          <p className='py-4'>
+            We retain personal information only as long as needed to respond to inquiries, provide services, support operations, and satisfy legal obligations.
           </p>
           <h3 className='text-2xl sm:text-xl pt-2'>
             Cookies and Tracking Technologies
           </h3>
           <p className='py-4'>
-            Our website may use cookies or other tracking technologies to enhance user experience. Cookies are small files that are placed on your device to collect information about your browsing habits. You can set your browser to refuse cookies or alert you when cookies are being sent, but note that some parts of the website may not function properly if cookies are disabled.
+            We may use cookies and related technologies to improve functionality and analyze usage. You can manage cookie preferences in your browser settings.
           </p>
           <h3 className='text-2xl sm:text-xl pt-2'>
             Your Rights and Choices
           </h3>
           <p className='py-4'>
-            You have the right to:
+            Depending on your location, you may have rights to:
           </p>
           <p className='pl-6 pb-4'>
-            Access, update, or correct your personal information by contacting us.
+            Access, update, or correct your personal information.
           </p>
           <p className='pl-6 pb-4'>
-            Opt out of receiving marketing communications at any time by following the unsubscribe instructions in the emails we send or contacting us directly.
+            Opt out of non-essential communications.
           </p>
           <p className='pl-6 pb-4'>
-            Request that we delete your personal information, subject to certain legal exceptions.
+            Request deletion of personal information, subject to legal requirements.
           </p>
           <h3 className='text-2xl sm:text-xl pt-2'>
             Third-Party Links
           </h3>
           <p className='py-4'>
-            Our website may contain links to third-party websites. Please note that we are not responsible for the privacy practices or content of these external sites. We encourage you to review their privacy policies before providing any personal information.
+            Our site may include links to third-party websites. We are not responsible for external privacy practices.
           </p>
           <h3 className='text-2xl sm:text-xl pt-2'>
             Changes to This Privacy Policy
           </h3>
           <p className='py-4'>
-            We reserve the right to update or modify this Privacy Policy at any time. Any changes will be posted on this page with an updated "Effective Date" at the top of the page. We encourage you to review this policy periodically to stay informed about how we are protecting your information.   
+            We may update this policy as our services evolve. Updates will be posted on this page.
+          </p>
+          <h3 className='text-2xl sm:text-xl pt-2'>
+            Effective Date
+          </h3>
+          <p className='py-4'>
+            July 20, 2026
           </p>
           <h3 className='text-2xl sm:text-xl pt-2'>
             Contact Us
           </h3>
           <p className='py-4'>
-            If you have any questions or concerns about this Privacy Policy or how we handle your personal information, please contact us today!
+            Questions about this policy can be sent through our contact page.
           </p>
           <div className='m-auto mt-10'>
             <button className='bg-white text-black w-[150px] rounded-md font-medium mr-3 mx-auto py-3'>
-              <Link to='/ContactUs' className='text-l p-4'>Contact Us</Link>
+              <Link to='/ContactUs' className='text-l p-4'>Discuss Vision</Link>
             </button>
             <button className='bg-white text-black w-[150px] rounded-md font-medium ml-3 mx-auto py-3'>
-              <Link to='/Services' className='text-l p-4'>Get Started</Link>
+              <Link to='/services' className='text-l p-4'>View Services</Link>
             </button>
           </div>
         </motion.div>

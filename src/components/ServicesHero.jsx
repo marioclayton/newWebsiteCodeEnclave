@@ -4,9 +4,9 @@ import {Link} from 'react-router-dom';
 
 const serviceLines = [
   'Services',
-  '> Engineered to Perform',
-  '> > High-performance websites',
-  '> > Custom software'
+  '> Custom web and software engineering',
+  '> > Business automation',
+  '> > Web applications and digital infrastructure'
 ];
 
 const ServicesHero = () => {
@@ -19,8 +19,8 @@ const ServicesHero = () => {
   const [typedScrollHint, setTypedScrollHint] = useState('');
   const [scrollHintCharIndex, setScrollHintCharIndex] = useState(0);
   const promptPrefix = '> ';
-  const buttonText = 'Get started';
-  const scrollHintText = 'Scroll down for more';
+  const buttonText = 'Discuss Your Vision';
+  const scrollHintText = 'Scroll to view capabilities';
   const typingSpeed = 17;
   const lineTextClass = 'md:text-4xl sm:text-3xl text-2xl';
 
