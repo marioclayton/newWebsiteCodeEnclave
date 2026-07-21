@@ -185,25 +185,24 @@ const ContactHero = () => {
 
   return (
     <div className='overlay-container mt-[-96px] pt-[96px]'>
-      <div className='overlay-content absolute inset-x-0 bottom-5 px-4 md:hidden retro-display'>
-        <div className='max-w-[1240px] mx-auto flex flex-col items-start gap-1'>
-          <a href={contactPhoneHref} className='text-base sm:text-lg'>
-            {`${promptPrefix}${contactPhone}`}
-          </a>
-          <a href={`mailto:${contactEmail}`} className='text-base sm:text-lg'>
-            {`${promptPrefix}${contactEmail}`}
-          </a>
-        </div>
-      </div>
-
       <div
-        className='w-full max-w-[1240px] h-screen mx-auto px-4 text-left flex flex-col justify-center items-start overlay-content retro-display'
+        className='w-full max-w-[1240px] min-h-screen mx-auto px-4 pt-20 pb-8 text-left flex flex-col justify-start md:justify-center items-start overlay-content retro-display md:pt-0 md:pb-0'
         onClick={() => inputRef.current?.focus()}
       >
         <div className='w-full md:flex md:items-start md:justify-between'>
-          <h1 className={`${lineTextClass} md:py-6 h-[4.25rem] md:h-[5rem] w-full md:flex-1 flex items-center justify-start`}>
-            {`${promptPrefix}Discuss your project`}
-          </h1>
+          <div className='w-full md:flex-1'>
+            <h1 className={`${lineTextClass} md:py-6 min-h-[4.25rem] md:h-[5rem] w-full flex items-center justify-start mb-2`}>
+              {`${promptPrefix}Discuss your project`}
+            </h1>
+            <div className='md:hidden flex flex-col items-start gap-2 pb-8'>
+              <a href={contactPhoneHref} className='text-base sm:text-lg'>
+                {`${promptPrefix}${contactPhone}`}
+              </a>
+              <a href={`mailto:${contactEmail}`} className='text-base sm:text-lg break-all'>
+                {`${promptPrefix}${contactEmail}`}
+              </a>
+            </div>
+          </div>
           <div className='hidden md:flex md:py-6 flex-col items-end gap-1 text-right'>
             <a href={contactPhoneHref} className='md:text-xl lg:text-2xl'>
               {`${promptPrefix}${contactPhone}`}
@@ -244,7 +243,7 @@ const ContactHero = () => {
           </>
         ) : (
           <>
-            <div className='w-full h-[18rem] md:h-[20rem] flex flex-col'>
+            <div className='w-full min-h-[18rem] md:h-[20rem] flex flex-col'>
               {prompts.map((prompt, index) => {
                 const promptText = index < committedCount
                   ? `${promptPrefix}${prompt.label}`
