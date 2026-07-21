@@ -4,4 +4,4 @@ Allow: /
 # Prevent indexing of backend endpoints
 Disallow: /backend/
 
-Sitemap: https://codeenclave.com/sitemap.xml
+Sitemap: https://www.codeenclave.com/sitemap.xml
