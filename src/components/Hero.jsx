@@ -180,14 +180,13 @@ const Hero = () => {
           {renderTypedLine(typedLines[2], 2)}
         </p>
         <div className='w-full min-h-[5rem] flex items-center'>
-          <button
-            className={`${lineTextClass} font-medium my-6 py-1 self-start bg-transparent border-0 ${showButton ? '' : 'invisible pointer-events-none'}`}
+          <Link
+            to='/services'
+            className={`${lineTextClass} font-medium my-6 py-1 self-start text-left p-0 m-0 inline-block ${showButton ? '' : 'invisible pointer-events-none'}`}
           >
-            <Link to='/services'>
-              <span>{promptPrefix}</span>
-              <span>[{typedButton || '\u00A0'}]</span>
-            </Link>
-          </button>
+            <span>{promptPrefix}</span>
+            <span>[{typedButton || '\u00A0'}]</span>
+          </Link>
         </div>
         <p className={`${lineTextClass} w-full min-h-[3rem] leading-none`}>
           {isButtonTypingComplete ? `${promptPrefix}${typedScrollHint || '\u00A0'}` : '\u00A0\u00A0'}
