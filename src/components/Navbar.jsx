@@ -11,6 +11,8 @@ const Navbar = () => {
   const [isPinned, setIsPinned] = useState(false)
   const [activeThemeZone, setActiveThemeZone] = useState('')
   const [showServicesMenu, setShowServicesMenu] = useState(false)
+  const [showMobileServices, setShowMobileServices] = useState(false)
+  const [showMobileIndustries, setShowMobileIndustries] = useState(false)
   const location = useLocation()
   const currentPath = location.pathname.toLowerCase()
   const normalizedPath = currentPath.length > 1 && currentPath.endsWith('/')
@@ -32,6 +34,8 @@ const Navbar = () => {
   const closeMenus = () => {
     setNav(true)
     setShowServicesMenu(false)
+    setShowMobileServices(false)
+    setShowMobileIndustries(false)
   }
 
   const handleLogoClick = () => {
@@ -228,7 +232,7 @@ const Navbar = () => {
         <div onClick={handleNav} className='block lg:hidden'>
         {!nav ? <AiOutlineClose size={35}/> : <AiOutlineMenu size={35}/>}
         </div>
-        <div className={!nav ? `fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-700 ${mobilePanelBgClass} ease-in-out duration-500 ${navTone === 'white' || isWhiteRoute ? 'retro-display-white' : ''}` : 'fixed left-[-100%]'}>
+        <div className={!nav ? `fixed left-0 top-0 w-[60%] h-full overflow-y-auto border-r border-r-gray-700 ${mobilePanelBgClass} ease-in-out duration-500 ${navTone === 'white' || isWhiteRoute ? 'retro-display-white' : ''}` : 'fixed left-[-100%]'}>
           <NavLink to='/' end onClick={handleLogoClick} className='block text-2xl md:text-3xl p-4 leading-tight'>
             {'<code>'}<br />{'</enclave>'}
           </NavLink>
@@ -239,34 +243,62 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/services" end className='grid text-xl md:text-2xl p-4 border-b border-gray-600'>
-                  {isServicesSection ? '[SERVICES]' : 'SERVICES'}
-                </NavLink>
+                <button
+                  type='button'
+                  className='w-full grid text-left text-xl md:text-2xl p-4 border-b border-gray-600'
+                  aria-expanded={showMobileServices}
+                  onClick={() => setShowMobileServices((prev) => !prev)}
+                >
+                  {isServicesSection ? '[SERVICES]' : 'SERVICES'} {showMobileServices ? '[-]' : '[+]'}
+                </button>
               </li>
-              {serviceLinks.map((service) => (
-                <li key={service.slug}>
-                  <NavLink to={`/services/${service.slug}`} end className='grid text-base p-3 border-b border-gray-700'>
-                    {service.title}
-                  </NavLink>
-                </li>
-              ))}
+              {showMobileServices && (
+                <>
+                  <li>
+                    <NavLink to="/services" end className='grid text-base p-3 border-b border-gray-700'>
+                      Services Overview
+                    </NavLink>
+                  </li>
+                  {serviceLinks.map((service) => (
+                    <li key={service.slug}>
+                      <NavLink to={`/services/${service.slug}`} end className='grid text-base p-3 border-b border-gray-700'>
+                        {service.title}
+                      </NavLink>
+                    </li>
+                  ))}
+                </>
+              )}
               <li>
                 <NavLink to="/Portfolio" end className='grid text-xl md:text-2xl p-4 border-b border-gray-600'>
                   {({ isActive }) => (isActive ? '[OUR WORK]' : 'OUR WORK')}
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/industries" end className='grid text-xl md:text-2xl p-4 border-b border-gray-600'>
-                  {isIndustriesSection ? '[INDUSTRIES]' : 'INDUSTRIES'}
-                </NavLink>
+                <button
+                  type='button'
+                  className='w-full grid text-left text-xl md:text-2xl p-4 border-b border-gray-600'
+                  aria-expanded={showMobileIndustries}
+                  onClick={() => setShowMobileIndustries((prev) => !prev)}
+                >
+                  {isIndustriesSection ? '[INDUSTRIES]' : 'INDUSTRIES'} {showMobileIndustries ? '[-]' : '[+]'}
+                </button>
               </li>
-              {industryLinks.map((industry) => (
-                <li key={industry.slug}>
-                  <NavLink to={`/industries/${industry.slug}`} end className='grid text-base p-3 border-b border-gray-700'>
-                    {industry.title}
-                  </NavLink>
-                </li>
-              ))}
+              {showMobileIndustries && (
+                <>
+                  <li>
+                    <NavLink to="/industries" end className='grid text-base p-3 border-b border-gray-700'>
+                      Industries Overview
+                    </NavLink>
+                  </li>
+                  {industryLinks.map((industry) => (
+                    <li key={industry.slug}>
+                      <NavLink to={`/industries/${industry.slug}`} end className='grid text-base p-3 border-b border-gray-700'>
+                        {industry.title}
+                      </NavLink>
+                    </li>
+                  ))}
+                </>
+              )}
               <li>
                 <NavLink to="/ContactUs" end className='grid text-xl md:text-2xl p-4 border-b border-gray-600'>
                   {({ isActive }) => (isActive ? '[START PROJECT]' : 'START PROJECT')}
